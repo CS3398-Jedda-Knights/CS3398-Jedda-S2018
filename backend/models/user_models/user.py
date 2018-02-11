@@ -1,4 +1,4 @@
-from app import db
+from config.db import db
 
 
 class UserModel(db.Model):
@@ -36,8 +36,14 @@ class UserModel(db.Model):
     def json(self):
         """This method returns a json representation of the user object"""
 
+        # parse date object as datetime string
+        if self.join_date:
+            str_join_date = self.join_date.strftime('%B %d, %Y at %I:%M%p')
+        else:
+            str_join_date = None
+
         return {'id': self.id, 'first_name': self.first_name, 'last_name': self.last_name, 'username': self.username,
-                'emai': self.email, 'short_description': self.short_description, 'join_date': self.join_date,
+                'emai': self.email, 'short_description': self.short_description, 'join_date': str_join_date,
                 'active': self.active, 'statue': self.status, }
 
     def save_to_db(self):
@@ -51,6 +57,12 @@ class UserModel(db.Model):
 
         db.session.delete(self)
         db.session.commit()
+
+    @classmethod
+    def find_by_username(cls, username):
+        """This method is used to find a user by the given id"""
+        return cls.query.filter_by(username=username).first()
+        
 
 
 db.create_all()
