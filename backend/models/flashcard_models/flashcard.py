@@ -1,7 +1,7 @@
 from config.db import db
 
 
-class UserModel(db.Model):
+class FlashcardModel(db.Model):
     """This class creates the models for a user object"""
 
     __tablename__ = 'flashcards'

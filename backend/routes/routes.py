@@ -16,3 +16,10 @@ user_routes = {
         "method": "DELETE"
     }
 }
+
+flashcard_routes = {
+    "read all flashcards": {
+        "url": "/api/flashcard/<string:subject>"
+        "method": "GET"
+    }
+}
