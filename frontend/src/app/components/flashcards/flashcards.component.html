@@ -1,0 +1,29 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<app-topnav></app-topnav>
+
+<!--<div id="navbar" class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+    <h3 class="w3-bar-item">Decks</h3>
+    <button *ngFor="let deck of decks" (click)="viewFlashcard(this.decks.indexOf(deck))" class="w3-bar-item w3-button">{{ deck }} <br></button>
+</div>-->
+
+<div id="mySidenav" class="sidenav">
+    <a class="closebtn" (click)="closeNav()">&times;</a>
+    <a *ngFor="let deck of decks" (click)="viewFlashcard(this.decks.indexOf(deck))">{{ deck }} <br></a>
+</div>
+
+<a style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</a>
+
+<div id="main" style="margin-left:25%" style = 'text-align:center'>
+    <a routerLink="/Home"><div class="card">
+        <div class="container">
+          <h4><b>{{ flashcardViews[0][0] }}</b></h4> 
+          <p>{{ flashcardViews[0][1] }}</p> 
+        </div>
+    </div></a>
+    <div>
+      <br><textarea rows="5" style="width:60%;" placeholder="Answer"></textarea>
+    </div>
+</div>

@@ -1,34 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule, Http, RequestOptions } from '@angular/http';
-import { RouterModule, Routes } from '@angular/router';
-
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule} from '../app/routes/app-routing.module'
+import { MainMenuComponent } from './components/main-menu/main-menu.component';
+import { HomeComponent } from './components/home/home.component';
+import { NotebookComponent } from './components/notebook/notebook.component';
+
+import { UserService } from './user.service';
+import { FlashcardsComponent } from './components/flashcards/flashcards.component';
+import { TopnavComponent } from './components/topnav/topnav.component';
 import { MainLoginComponent } from './components/main-login/main-login.component';
-import { MainNavigationComponent } from './components/main-navigation/main-navigation.component';
-import { MainFooterComponent } from './components/main-footer/main-footer.component';
-import { HttpRequest } from 'selenium-webdriver/http';
-import { MainHomeComponent } from './components/main-home/main-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainLoginComponent,
-    MainNavigationComponent,
-    MainFooterComponent,
-    MainHomeComponent
+    MainMenuComponent,
+    HomeComponent,
+    NotebookComponent,
+    FlashcardsComponent,
+    TopnavComponent,
+    MainLoginComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
-    AppRoutingModule
+    RouterModule.forRoot([
+      { path: '', component: MainMenuComponent},
+      { path: 'Notebook', component: NotebookComponent},
+      { path: 'Home', component: HomeComponent},
+      { path: 'Flashcards', component: FlashcardsComponent}
+    ])
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

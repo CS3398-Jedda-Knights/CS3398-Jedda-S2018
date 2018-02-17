@@ -1,0 +1,34 @@
+<div style = 'text-align:center'>
+<h2>Welcome to</h2>
+<h1>Noterity</h1>
+<p>(fuck you it's a clever name)</p>
+
+
+<!--<h2>Sign In</h2>
+    <input #name type="text" name="name" placeholder="User Name"><br>
+    <input #pass type="text" name="password" placeholder="Password"><br>
+    <button (click)="setUser(name.value, pass.value)">Sign In</button>
+    <button>Sign Up</button><br>
+<p>{{ error }}</p>-->
+</div>
+
+<form action="/action_page.php">
+  
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input #name type="text" placeholder="Enter Username" name="uname" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input #pass type="password" placeholder="Enter Password" name="psw" required>
+          
+      <button type="submit"(click)="setUser(name.value, pass.value)" >Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
