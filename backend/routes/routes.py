@@ -1,11 +1,11 @@
 user_routes = {
     "create new user":{
         "url": "/api/user/add",
-        "method": "GET"
+        "method": "POST"
     },
     "read one user": {
         "url": "/api/user/<string:username>",
-        "method": "POST"
+        "method": "GET"
     },
     "update user info": {
         "url": "/api/user/<string:username>",
