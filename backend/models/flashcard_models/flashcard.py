@@ -1,4 +1,5 @@
 from config.db import db
+import datetime
 
 
 class FlashcardModel(db.Model):
@@ -24,7 +25,7 @@ class FlashcardModel(db.Model):
         self.description = new_flashcard['description']
         self.question = new_flashcard['question']
         self.answer = new_flashcard['answer']
-        self.create_date = new_user['create_date']
+        self.create_date = datetime.datetime.now()
 
     def __repr__(self):
         """This method returns a string representation of the user object"""

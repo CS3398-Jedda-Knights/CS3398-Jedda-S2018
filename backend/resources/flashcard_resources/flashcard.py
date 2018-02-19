@@ -12,13 +12,56 @@ from routes.routes import flashcard_routes
 
 from models.flashcard_models.flashcard import FlashcardModel
 
+parser = reqparse.RequestParser()
+
+parser.add_resource('user_id', type=str, required=True)
+parser.add_resource('subject', type=str, required=True)
+parser.add_resource('description', type=str, required=True)
+parser.add_resource('question', type=str, required=True)
+parser.add_resource('answer', type=str, required=True)
+
 class GetFlashcards(Resource):
     def get(self, subject):
         flashcards = FlashcardModel.find_by_subject(subject)
 
         if flashcards:
             return {'Flashcards': flashcards.json()}, 200
-        return {'error': 'Flashcards not found'}, 404
+        return {'error': 'Flashcards not found'}, 400
+
+class FlashcardResource(Resource):
+    def get(self, id):
+        flashcard = FlashcardModel.find_by_id(id)
+
+        if flashcard:
+            return {'Flashcard': flashcard.json()},200
+        return {'error': 'Flashcard not found'}, 400
+
+    def put(self, id):
+        flashcard = FlashcardModel.find_by_id(id)
+
+        if flashcard:
+            args = parser.parse_args()
+
+            flashcard.user_id = args['user_id']
+            flashcard.subject = args['subject']
+            flashcard.description = args['description']
+            flashcard.question = args['question']
+            flashcard.answer = args['answer']
+
+            flashcard.save_to_db()
+
+            return {'message': 'Flashcard updated'}, 200
+        return {'error': 'Flashcard not found'}, 400
+
+
+class CreateFlashcard(Resource):
+    def post(self):
+        args = parser.parse_args()
+        new_task = TaskModel(args)
+
+        new_task.save_to_db()
+
+        return {'error': 'Flashcard created'}, 200
 
 
 # append api endpoint for the 
