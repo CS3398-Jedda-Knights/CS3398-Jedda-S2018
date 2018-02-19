@@ -22,4 +22,17 @@ flashcard_routes = {
         "url": "/api/flashcard/<string:subject>"
         "method": "GET"
     }
+    "read one flashcard": {
+        "url": "/api/flashcard/<string:id>"
+        "method": "GET"
+    }
+    "update flashcard": {
+        "url": "/api/flashcard/<string:id>"
+        "method": "PUT"
+    }
+    "delete flashcard": {
+        "url": "/api/flashcard/<string:id>"
+        "method": "DELETE"
+    }
+
 }
