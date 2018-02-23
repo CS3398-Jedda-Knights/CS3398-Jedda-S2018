@@ -10,10 +10,10 @@ class FlashcardModel(db.Model):
     id = db.Column('id', db.Integer, primary_key=True)
     user_id = db.Column('user_id', db.String(80), nullable=False)
     subject = db.Column('subject', db.String(80))
-    description = db.Column('description', db.String(80))
+    # description = db.Column('description', db.String(80))
     question = db.Column('question', db.String(80))
     answer = db.Column('answer', db.String(80))
-    create_date = db.Column('create_date', db.TIMESTAMP)
+    # create_date = db.Column('create_date', db.TIMESTAMP)
     # active = db.Column('active', db.Boolean, default=False, nullable=False)
     # status = db.Column('status', db.String(80))
 
