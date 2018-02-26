@@ -19,7 +19,7 @@ user_routes = {
 
 flashcard_routes = {
     "read all flashcards": {
-        "url": "/api/flashcard/<string:subject>",
+        "url": "/api/flashcards/<string:subject>",
         "method": "GET"
     },
     "create new flashcard": {

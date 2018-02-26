@@ -22,8 +22,10 @@ from routes.routes import *
 
 # import resource to append to the api
 from resources.user_resources.user import *
+from resources.flashcard_resources.flashcard import *
 
 if __name__ == '__main__':
-    # db.init_app(app)
-    # db.create_all()
+    db.init_app(app)
+    db.create_all()
     app.run(host='localhost', port=5000)
+
