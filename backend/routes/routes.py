@@ -22,6 +22,10 @@ flashcard_routes = {
         "url": "/api/flashcard/<string:subject>",
         "method": "GET"
     },
+    "create new flashcard": {
+        "url": "/api/flashcard/add",
+        "method": "POST"
+    },
     "read one flashcard": {
         "url": "/api/flashcard/<string:id>",
         "method": "GET"

@@ -14,9 +14,8 @@ from models.flashcard_models.flashcard import FlashcardModel
 
 parser = reqparse.RequestParser()
 
-parser.add_resource('user_id', type=str, required=True)
+parser.add_resource('username', type=str, required=True)
 parser.add_resource('subject', type=str, required=True)
-parser.add_resource('description', type=str, required=True)
 parser.add_resource('question', type=str, required=True)
 parser.add_resource('answer', type=str, required=True)
 
@@ -30,6 +29,7 @@ class GetFlashcards(Resource):
 
 class FlashcardResource(Resource):
     def get(self, id):
+        return "hello"
         flashcard = FlashcardModel.find_by_id(id)
 
         if flashcard:
@@ -42,9 +42,8 @@ class FlashcardResource(Resource):
         if flashcard:
             args = parser.parse_args()
 
-            flashcard.user_id = args['user_id']
+            flashcard.user_id = args['username']
             flashcard.subject = args['subject']
-            flashcard.description = args['description']
             flashcard.question = args['question']
             flashcard.answer = args['answer']
 
@@ -61,9 +60,9 @@ class CreateFlashcard(Resource):
 
         new_task.save_to_db()
 
-        return {'error': 'Flashcard created'}, 200
+        return {'message': 'Flashcard created'}, 200
 
 
 # append api endpoint for the 
 api.add_resource(GetFlashcards, flashcard_routes['read all flashcards']['url'])
-
+api.add_resource(CreateFlashcard, flashcard_routes['create new flashcard']['url'])

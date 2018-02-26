@@ -1,3 +1,5 @@
+# import sys
+# sys.path.append("../../")
 from config.db import db
 import datetime
 
@@ -62,7 +64,7 @@ class FlashcardModel(db.Model):
         return cls.query.filter_by(id=id).first()
     
     @classmethod
-    def find_by_subject(cls, subject)
+    def find_by_subject(cls, subject):
         """This method is used to find all the flashcards by the given subject"""
         return cls.query.filter_by(subject=subject).all()
 
