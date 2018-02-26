@@ -46,12 +46,22 @@ body {
     transition: 0.3s;
     width: 60%;
     margin: auto;
+    border-radius: 20px 20px 0 0;
 }
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.container {
-    padding: 100px 100px;
+.container1 {
+    padding: 20px 20px;
+    text-align: left;
+    background-color: rgba(0,0,0,.8);
+    -webkit-text-fill-color: antiquewhite;
+    border-radius: 20px 20px 0 0;
+}
+
+.container2 {
+    padding: 10px 10px;
+    
 }

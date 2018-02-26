@@ -1,0 +1,49 @@
+<app-topnav></app-topnav>
+<!-- https://www.w3schools.com/css/css_form.asp -->
+<html>
+<head>
+<style> 
+
+input[type=text], select {
+    width: 50%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+input[type=submit] {
+    width: 50%;
+    background-color: #b5070f;
+    color: white;
+    padding: 8px 20px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+<p>Select the subject of the notes.</p>
+
+<form>
+    <!-- <form action="/action_page.php"> this will redirect it to respective set of flashcards-->
+  <select id="subject" name="subject">
+    <option value="english">English</option>
+    <option value="math">Math</option>
+    <option value="cs">Computer Science</option>
+  </select>
+</form>
+<!-- Once user Selects subject it will bring up flash cards if any of subject selected -->
+    <a routerLink="/Home"><div class="card">
+        <div class="container">
+        </div>
+    </div></a>
+    <div>
+      <br><textarea rows="20" style="width:50%;" placeholder="Enter notes here"></textarea>
+    </div>
+    <input type="submit" value="Submit Note">
+</body>
+</html>

@@ -11,6 +11,7 @@ import { UserService } from './user.service';
 import { FlashcardsComponent } from './components/flashcards/flashcards.component';
 import { TopnavComponent } from './components/topnav/topnav.component';
 import { MainLoginComponent } from './components/main-login/main-login.component';
+import { TakeNotesComponent } from './components/take-notes/take-notes.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MainLoginComponent } from './components/main-login/main-login.component
     NotebookComponent,
     FlashcardsComponent,
     TopnavComponent,
-    MainLoginComponent
+    MainLoginComponent,
+    TakeNotesComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { MainLoginComponent } from './components/main-login/main-login.component
       { path: '', component: MainMenuComponent},
       { path: 'Notebook', component: NotebookComponent},
       { path: 'Home', component: HomeComponent},
-      { path: 'Flashcards', component: FlashcardsComponent}
+      { path: 'Flashcards', component: FlashcardsComponent},
+      { path: 'Take-Notes', component: TakeNotesComponent}
     ])
   ],
   providers: [UserService],
