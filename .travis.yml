@@ -3,9 +3,9 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
-before_script:
-  - cd backend
+#before_script:
+#  - cd backend
 script:
-  - python app.py
-after_script:
-  - cd ..
+  - sh run_travis.sh
+#after_script:
+#  - cd ..
