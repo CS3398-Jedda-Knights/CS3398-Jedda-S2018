@@ -3,9 +3,19 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
-#before_script:
-#  - cd backend
 script:
   - sh run_travis.sh
-#after_script:
-#  - cd ..
+
+language: node_js
+node_js:
+   - node # will use latest node
+
+before_script: # commands to run before running scripts
+   - cd frontend
+   - npm install -g --silent @angular/cli
+   
+script: # the build step
+   - ng build --prod
+   
+after_script:
+   - cd ..
