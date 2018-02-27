@@ -17,6 +17,7 @@
     width: 80%;
     margin: auto;
     text-decoration: none;
+    border-radius: 20px;
 }
 
 .card:hover {
@@ -28,5 +29,6 @@
     text-align: center;
     -webkit-text-fill-color: antiquewhite;
     text-decoration: none;
-    background-color: #303030;
+    background-color: #e90a0a;
+    border-radius: 20px;
 }
