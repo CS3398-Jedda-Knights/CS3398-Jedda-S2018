@@ -1,0 +1,51 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<app-topnav></app-topnav>
+
+<!--<div id="navbar" class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+    <h3 class="w3-bar-item">Notes</h3>
+    <button *ngFor="let section of sections" (click)="viewNotes(this.sections.indexOf(section))" class="w3-bar-item w3-button">{{ section }} <br></button>
+   <!-- <a href="#" class="w3-bar-item w3-button" *ngFor="let section of sections">{{ section }} <br></a>
+</div>-->
+
+<div id="mySidenav" class="sidenav">
+    <a class="closebtn" (click)="closeNav()">&times;</a>
+    <a *ngFor="let section of sections" (click)="viewNotes(this.sections.indexOf(section))">{{ section }} <br></a>
+</div>
+    
+<a style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</a>
+
+<!--<div id="main" style="margin-left:25%">
+    <div *ngFor="let noteView of noteViews" id="mainText" class="w3-panel w3-light-grey w3-border w3-round">{{ noteView }}</div>
+    <button (click)="addItem()">Add</button>
+</div>-->
+
+<div id="main" style="margin-left:25%" style = 'text-align:center'>
+    <a *ngFor="let noteView of noteViews" routerLink="/Home"><div class="card">
+        <div class="container">
+            <h4><b>{{ noteView }}</b></h4> 
+            <p>Lorem ipsum dolor sit amet, 
+                consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt 
+                ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis 
+                nostrud exercitation ullamco 
+                laboris nisi ut aliquip ex ea 
+                commodo consequat. Duis aute 
+                irure dolor in reprehenderit 
+                in voluptate velit esse cillum 
+                dolore eu fugiat nulla pariatur. 
+                Excepteur sint occaecat cupidatat 
+                non proident, sunt in culpa qui 
+                officia deserunt mollit anim id 
+                est laborum.</p> 
+        </div>
+    </div></a>
+    <div>
+        <br><textarea rows="5" style="width:60%;" placeholder="Answer"></textarea>
+    </div>
+</div>
+
+
