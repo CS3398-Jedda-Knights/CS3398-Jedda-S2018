@@ -1,11 +1,24 @@
-language: python
-python:
-  - "3.4"
-  - "3.5"
-  - "3.6"
-#before_script:
-#  - cd backend
-script:
-  - sh run_travis.sh
-#after_script:
-#  - cd ..
+matrix:
+  include:
+   - language: python
+     python:
+      - "3.4"
+      - "3.5"
+      - "3.6"
+     script:
+      - sh run_travis.sh
+
+#    - language: node_js
+#      node_js:
+#       - "7" 
+
+#      before_script: # commands to run before running scripts
+#       - cd frontend
+#       - npm install -g --silent @angular/cli
+#       - npm install
+
+#      script: # the build step
+#       - ng build --prod
+
+#      after_script:
+#       - cd ..
