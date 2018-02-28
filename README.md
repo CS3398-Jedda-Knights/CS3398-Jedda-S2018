@@ -8,6 +8,7 @@
 Notariety is an application primarily aimed at allowing users to create notes, flashcards, and quizzes which can be used as study aids for various courses.  
 
 ### Project Status
+``` html
  <div style="background-color:rgba(224, 240, 217, 0.0470588); text-align:center; vertical-align: middle; padding:40px 0;"> 
  
 ###### Completed: 
@@ -17,6 +18,7 @@ Notariety is an application primarily aimed at allowing users to create notes, f
 * The main navigation bar and template for notes and flashcards have been implemented
 
 </div>
+```
 
 ###### In Progress:
 * Integrating the frontend and backend (i.e establishing services in Angular to access the API's in Flask
