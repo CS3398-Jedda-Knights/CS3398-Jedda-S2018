@@ -17,7 +17,7 @@ Notariety is an application primarily aimed at allowing users to create notes, f
 ```
 ###### In Progress:
 ``` diff
-- Integrating the frontend and backend (i.e establishing services in Angular to access the API's in Flask
+- Integrating the frontend and backend (i.e establishing services in Angular to access the Flask APIs')
 ```
 
 ### Tech-Stack
