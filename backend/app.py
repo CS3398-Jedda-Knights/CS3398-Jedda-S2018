@@ -23,6 +23,7 @@ from routes.routes import *
 # import resource to append to the api
 from resources.user_resources.user import *
 from resources.flashcard_resources.flashcard import *
+from resources.note_resourcees.note import *
 
 if __name__ == '__main__':
     db.init_app(app)
