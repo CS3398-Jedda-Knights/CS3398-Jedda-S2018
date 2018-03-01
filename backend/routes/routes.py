@@ -38,5 +38,8 @@ flashcard_routes = {
         "url": "/api/flashcard/<string:id>",
         "method": "DELETE"
     }
+}
 
+note_routes = {
+    
 }
