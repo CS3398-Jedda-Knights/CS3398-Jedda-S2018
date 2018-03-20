@@ -4,12 +4,6 @@ from flask_restful import Resource, reqparse
 from flask_jwt import JWT, jwt_required
 from datetime import datetime
 
-# import from main
-from app import app
-from config.db import db
-from app import api
-from routes.routes import flashcard_routes
-
 from models.flashcard_models.flashcard import FlashcardModel
 
 parser = reqparse.RequestParser()
@@ -62,9 +56,3 @@ class CreateFlashcard(Resource):
         new_flashcard.save_to_db()
 
         return {'message': 'Flashcard created'}, 200
-
-
-# append api endpoint for the 
-api.add_resource(GetFlashcards, flashcard_routes['read all flashcards']['url'])
-api.add_resource(CreateFlashcard, flashcard_routes['create new flashcard']['url'])
-api.add_resource(FlashcardResource, flashcard_routes['read one flashcard']['url'])

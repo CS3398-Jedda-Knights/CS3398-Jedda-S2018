@@ -1,4 +1,4 @@
-from config.db import db
+from db import db
 
 
 class UserModel(db.Model):
@@ -10,8 +10,9 @@ class UserModel(db.Model):
     first_name = db.Column('first_name', db.String(80))
     last_name = db.Column('last_name', db.String(80))
     username = db.Column('username', db.String(80), unique=True, nullable=False)
+    password = db.Column('password', db.String(80), nullable=False)
     email = db.Column('email', db.String(80), nullable=False)
-    short_description = db.Column('short_description', db.String(80))
+    short_description = db.Column('short_description', db.Text)
     join_date = db.Column('join_date', db.TIMESTAMP)
     active = db.Column('active', db.Boolean, default=False, nullable=False)
     status = db.Column('status', db.String(80))
@@ -22,6 +23,7 @@ class UserModel(db.Model):
         self.first_name = new_user['first_name']
         self.last_name = new_user['last_name']
         self.username = new_user['username']
+        self.password = new_user['password']
         self.email = new_user['email']
         self.short_description = new_user['short_description']
         self.join_date = new_user['join_date']
@@ -31,7 +33,7 @@ class UserModel(db.Model):
     def __repr__(self):
         """This method returns a string representation of the user object"""
 
-        return 'UserModel %r' % self.username
+        return "User(id='%s')" % self.id
 
     def json(self):
         """This method returns a json representation of the user object"""
@@ -44,7 +46,7 @@ class UserModel(db.Model):
 
         return {'id': self.id, 'first_name': self.first_name, 'last_name': self.last_name, 'username': self.username,
                 'emai': self.email, 'short_description': self.short_description, 'join_date': str_join_date,
-                'active': self.active, 'statue': self.status, }
+                'active': self.active, 'status': self.status, }
 
     def save_to_db(self):
         """This methods saves the changes made to a user object and commits those changes to the database"""
@@ -62,11 +64,7 @@ class UserModel(db.Model):
     def find_by_username(cls, username):
         """This method is used to find a user by the given id"""
         return cls.query.filter_by(username=username).first()
-        
-
-
-db.create_all()
-db.session.commit()
+       
 
 
 
