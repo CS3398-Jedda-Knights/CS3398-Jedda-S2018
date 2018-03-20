@@ -18,7 +18,7 @@ import { UserProfileComponent } from '../components/user-profile/user-profile.co
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'login', component: MainLoginComponent},
   { path: 'about', component: MainAboutComponent },
   { path: 'home', component: MainHomeComponent },

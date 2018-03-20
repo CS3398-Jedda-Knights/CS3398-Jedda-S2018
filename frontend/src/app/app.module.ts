@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+
+
 
 // routes 
 import { AppRoutingModule } from '../app/routes/app-routing.module'
@@ -25,6 +29,7 @@ import { TakeNotesComponent } from './components/take-notes/take-notes.component
 import { UserService } from './user.service';
 import { MainAboutComponent } from './components/main-about/main-about.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -43,9 +48,11 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule,
+    FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
