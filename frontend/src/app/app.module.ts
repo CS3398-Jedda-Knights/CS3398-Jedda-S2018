@@ -24,6 +24,7 @@ import { TakeNotesComponent } from './components/take-notes/take-notes.component
 // services
 import { UserService } from './user.service';
 import { MainAboutComponent } from './components/main-about/main-about.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MainAboutComponent } from './components/main-about/main-about.component
     MainHomeComponent,
     MainNavigationComponent,
     MainFooterComponent,
-    MainAboutComponent
+    MainAboutComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

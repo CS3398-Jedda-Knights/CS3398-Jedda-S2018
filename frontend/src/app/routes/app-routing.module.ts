@@ -13,6 +13,7 @@ import { FlashcardsComponent } from '../components/flashcards/flashcards.compone
 import { TopnavComponent } from '../components/topnav/topnav.component';
 import { TakeNotesComponent } from '../components/take-notes/take-notes.component';
 import { NotebookComponent } from '../components/notebook/notebook.component';
+import { UserProfileComponent } from '../components/user-profile/user-profile.component';
 
 
 
@@ -24,6 +25,8 @@ const routes: Routes = [
   { path: 'notebook', component: NotebookComponent },
   { path: 'flashcards', component: FlashcardsComponent },
   { path: 'take-notes', component: TakeNotesComponent },
+  { path: 'user-profile', component: UserProfileComponent },
+
 
   //this is the redirect for garbage routes. (This should be the last route)
   { path: '**', component: MainHomeComponent },
