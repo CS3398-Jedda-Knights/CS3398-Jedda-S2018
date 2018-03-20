@@ -1,3 +1,87 @@
-<p>
-  main-home works!
-</p>
+<!--<div class="row">
+    <div class="column">
+        <a routerLink="/notebook">
+            <div class="card">
+                <div class="container">
+                    <h4><b>Notebook</b></h4>
+                    <p>{{ str }}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="column">
+        <a routerLink="/flashcards">
+            <div class="card">
+                <div class="container">
+                    <h4><b>Flashcards</b></h4>
+                    <p>{{ str }}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <a routerLink="/take-notes">
+            <div class="card">
+                <div class="container">
+                    <h4><b>Take Notes</b></h4>
+                    <p>{{ str }}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="column">
+        <a routerLink="/home">
+            <div class="card">
+                <div class="container">
+                    <h4><b>Create Flashcards</b></h4>
+                    <p>{{ str }}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card" routerLink="/notebook">
+                <div class="card-body">
+                    <h5 class="card-title">Notebooks<span class="badge badge-success ml-1"> 6</span></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card" routerLink="/flashcards">
+                <div class="card-body">
+                    <h5 class="card-title">Flashcards<span class="badge badge-warning ml-1">26</span></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-sm-6">
+            <div class="card" routerLink="/take-notes">
+                <div class="card-body">
+                    <h5 class="card-title">Take Notes <i class="fas fa-pencil-alt text-primary"></i></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Quizzes <i class="fas fa-question-circle text-danger"></i></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
