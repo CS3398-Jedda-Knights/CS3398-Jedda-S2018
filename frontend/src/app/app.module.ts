@@ -30,6 +30,7 @@ import { UserService } from './user.service';
 import { MainAboutComponent } from './components/main-about/main-about.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { LoginService } from './services/login.service';
+import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { LoginService } from './services/login.service';
     MainNavigationComponent,
     MainFooterComponent,
     MainAboutComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    SignUpPageComponent
   ],
   imports: [
     BrowserModule,
