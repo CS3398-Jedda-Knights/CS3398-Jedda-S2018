@@ -29,6 +29,7 @@ export class MainLoginComponent implements OnInit {
 
     this.loginService.login(body).subscribe( data =>{
         this.router.navigate(['/home']);
+        console.log(data);
 
     }, error => {
       // if (error.status_code == 401) {
