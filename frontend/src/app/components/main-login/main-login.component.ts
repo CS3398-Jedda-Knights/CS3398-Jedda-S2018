@@ -44,6 +44,9 @@ export class MainLoginComponent implements OnInit {
     });
   }
 
+  onRegister() {
+    this.router.navigate(['/sign-up-page']);
+  }
 
 
 }
