@@ -36,13 +36,15 @@ export class SignUpPageComponent implements OnInit {
 
     }, error => {
       // if (error.status_code == 401) {
-        this.serverResponse = 'Incorrect username or password';
+        this.serverResponse = 'Could not validate email.';
       // }
       // else {
       //   this.serverResponse = 'Failure to connect to the server';
       // }
       this.password = '';
       this.fullName = '';
+      this.email = '';
+      this.dateOfBirth = '';
   
       this.registerFail = true;
     })
