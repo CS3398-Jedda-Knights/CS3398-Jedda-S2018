@@ -13,7 +13,7 @@ export class SignUpPageComponent implements OnInit {
   private email: string = '';
   private password: string = '';
   private dateOfBirth: string = '';
-  private serverResponse: '';
+  private serverResponse: string = '';
   private registerFail: boolean;
 
   constructor(private registerService: RegisterService, private router: Router) { }
@@ -36,7 +36,7 @@ export class SignUpPageComponent implements OnInit {
 
     }, error => {
       // if (error.status_code == 401) {
-        //this.serverResponse = 'Incorrect username or password';
+        this.serverResponse = 'Incorrect username or password';
       // }
       // else {
       //   this.serverResponse = 'Failure to connect to the server';
