@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterService } from '../../services/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up-page',
@@ -8,9 +9,42 @@ import { RegisterService } from '../../services/register.service';
 })
 export class SignUpPageComponent implements OnInit {
 
-  constructor() { }
+  private fullName: string = '';
+  private email: string = '';
+  private password: string = '';
+  private dateOfBirth: string = '';
+  private serverResponse: '';
+  private registerFail: boolean;
+
+  constructor(private registerService: RegisterService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  onRegister() {
+    this.registerFail = false;
+
+    let body = {
+      "username": this.fullName,
+      "email": this.email,
+      "password": this.password,
+      "dateOfBirth": this.dateOfBirth
+    }
+
+    this.registerService.register(body).subscribe( data =>{
+        this.router.navigate(['/home']);
+
+    }, error => {
+      // if (error.status_code == 401) {
+        //this.serverResponse = 'Incorrect username or password';
+      // }
+      // else {
+      //   this.serverResponse = 'Failure to connect to the server';
+      // }
+      this.password = '';
+      this.fullName = '';
+  
+      this.registerFail = true;
+    })
+  }
 }
