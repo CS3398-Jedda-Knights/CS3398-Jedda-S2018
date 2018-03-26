@@ -1,12 +1,12 @@
 from db import db
-
+# from note import NoteModel
 
 class UserModel(db.Model):
     """This class creates the models for a user object"""
 
     __tablename__ = 'users'
 
-    id = db.Column('id', db.Integer, primary_key=True)
+    id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
     first_name = db.Column('first_name', db.String(80))
     last_name = db.Column('last_name', db.String(80))
     username = db.Column('username', db.String(80), unique=True, nullable=False)
@@ -16,6 +16,13 @@ class UserModel(db.Model):
     join_date = db.Column('join_date', db.TIMESTAMP)
     active = db.Column('active', db.Boolean, default=False, nullable=False)
     status = db.Column('status', db.String(80))
+
+    notes = db.relationship('NoteModel', secondary='users_notes_relationship', backref='user', lazy='dynamic')
+
+    user_notes_relationship = db.Table('users_notes_relationship',
+         db.Column('id', db.Integer, primary_key=True),
+         db.Column('user_id', db.Integer, db.ForeignKey('users.id')),
+         db.Column('note_id', db.Integer, db.ForeignKey('notes.id')))
 
     def __init__(self, new_user):
         """This method is used to initialize the user objects"""
