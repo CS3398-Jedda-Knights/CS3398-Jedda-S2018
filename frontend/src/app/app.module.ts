@@ -17,9 +17,11 @@ import { MainLoginComponent } from './components/main-login/main-login.component
 import { MainFooterComponent } from './components/main-footer/main-footer.component';
 import { MainNavigationComponent } from './components/main-navigation/main-navigation.component';
 import { MainHomeComponent } from './components/main-home/main-home.component';
+import { MainAboutComponent } from './components/main-about/main-about.component';
 
 
-
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.component';
 import { NotebookComponent } from './components/notebook/notebook.component';
 import { FlashcardsComponent } from './components/flashcards/flashcards.component';
 import { TopnavComponent } from './components/topnav/topnav.component';
@@ -27,10 +29,8 @@ import { TakeNotesComponent } from './components/take-notes/take-notes.component
 
 // services
 import { UserService } from './user.service';
-import { MainAboutComponent } from './components/main-about/main-about.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { LoginService } from './services/login.service';
-import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.component';
+import { RegisterService } from './services/register.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,7 @@ import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.comp
     HttpModule,
     FormsModule
   ],
-  providers: [UserService, LoginService],
+  providers: [UserService, LoginService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

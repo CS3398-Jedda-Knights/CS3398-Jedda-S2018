@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="line-height:100%">
             <form class="form-horizontal" role="form">
                 <h2>Registration Form</h2>
                 <div class="form-group">
@@ -35,9 +35,12 @@
                         </div>
                     </div>
                 </div> <!-- /.form-group -->
+                <div *ngIf="registerFail" class="alert alert-danger" role="alert">
+                        {{serverResponse}}
+                </div>
                 <div class="form-group">
                     <div class="col-lg-9 col-lg-offset-3">
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        <button class="btn btn-lg btn-success btn-block" type="button" (click)="onRegister()">Register</button>
                     </div>
                 </div>
             </form> <!-- /form -->
