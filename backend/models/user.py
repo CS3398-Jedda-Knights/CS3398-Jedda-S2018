@@ -71,6 +71,11 @@ class UserModel(db.Model):
     def find_by_username(cls, username):
         """This method is used to find a user by the given id"""
         return cls.query.filter_by(username=username).first()
+
+    @classmethod
+    def find_by_id(cls, id):
+        """This method is used to find a user by the given id"""
+        return cls.query.filter_by(id=id).first()
        
 
 

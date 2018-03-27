@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Poiret+One');
+body {
+    font-family: 'Comfortaa', cursive;
+}

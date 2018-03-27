@@ -29,20 +29,13 @@ export class MainLoginComponent implements OnInit {
 
     this.loginService.login(body).subscribe( data =>{
         // save the token in local storage
-        let token = data.access_token;
-        localStorage.setItem('token', token);
+        localStorage.setItem('token', data.access_token);
         this.router.navigate(['/home']);
-        console.log(data);
     }, error => {
-      // if (error.status_code == 401) {
         this.serverResponse = 'Incorrect username or password';
         console.log(error.statusText);
-      // }
-      // else {
-      //   this.serverResponse = 'Failure to connect to the server';
-      // }
-      this.password = '';
-      this.username = '';
+      // this.password = '';
+      // this.username = '';
   
       this.loginFail = true;
     });

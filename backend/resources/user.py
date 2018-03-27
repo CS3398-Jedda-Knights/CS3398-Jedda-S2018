@@ -1,7 +1,9 @@
 from datetime import datetime
 
 from flask_restful import Resource, reqparse
+from flask_jwt import jwt_required
 from models.user import UserModel
+
 
 class UserSignUp(Resource):
     parser = reqparse.RequestParser()
@@ -33,6 +35,7 @@ class UserSignUp(Resource):
     parser.add_argument('short_description',
         type=str,
         required=False,
+        default="No bio."
     )
     parser.add_argument('join_date',
         required=False,
@@ -48,7 +51,7 @@ class UserSignUp(Resource):
         required=False,
         default="Studying"
     )
-
+    
     def post(self):
         data = UserSignUp.parser.parse_args()
 
@@ -63,6 +66,7 @@ class UserSignUp(Resource):
         return {"message": "User created successfully."}, 201
 
 class GetUser(Resource):
+    @jwt_required()
     def get(self, username):
         user = UserModel.find_by_username(username)
 

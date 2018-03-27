@@ -9,10 +9,12 @@ import { Router } from '@angular/router';
 })
 export class SignUpPageComponent implements OnInit {
 
-  private fullName: string = '';
-  private email: string = '';
+  private first_name: string = '';
+  private last_name: string = '';
+  private username: string = '';
   private password: string = '';
-  private dateOfBirth: string = '';
+  private email: string = '';
+  private acceptTerms: Boolean = false;
   private serverResponse: string = '';
   private registerFail: boolean;
 
@@ -21,32 +23,37 @@ export class SignUpPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRegister() {
+  onSignup() {
     this.registerFail = false;
 
     let body = {
-      "username": this.fullName,
-      "email": this.email,
+      "first_name": this.first_name,
+      "last_name": this.last_name,
+      "username": this.username,
       "password": this.password,
-      "dateOfBirth": this.dateOfBirth
+      "email": this.email,
     }
 
-    this.registerService.register(body).subscribe( data =>{
-        this.router.navigate(['/home']);
+    console.log(body)
 
-    }, error => {
-      // if (error.status_code == 401) {
-        this.serverResponse = 'Could not validate email.';
-      // }
-      // else {
-      //   this.serverResponse = 'Failure to connect to the server';
-      // }
-      this.password = '';
-      this.fullName = '';
-      this.email = '';
-      this.dateOfBirth = '';
-  
-      this.registerFail = true;
+    this.registerService.signUp(body).subscribe(data => {
+      console.log(data);
+    }, error=> {
+      console.log(error);
     })
+
+    // this.registerService.register(body).subscribe( data =>{
+    //     this.router.navigate(['/home']);
+
+    // }, error => {
+    //   // if (error.status_code == 401) {
+    //     this.serverResponse = 'Could not validate email.';
+    //   // }
+    //   // else {
+    //   //   this.serverResponse = 'Failure to connect to the server';
+    //   // }
+
+    //   this.registerFail = true;
+    // })
   }
 }
