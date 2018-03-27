@@ -18,7 +18,7 @@ export class RegisterService {
   constructor(private http: Http) { }
 
   register(body) {
-    this.url = APP_SERVER + 'auth';
+    this.url = APP_SERVER + 'user/signup';
 
       return this.http.post(this.url, body, this.options)
       .map((res:Response) => res.json())

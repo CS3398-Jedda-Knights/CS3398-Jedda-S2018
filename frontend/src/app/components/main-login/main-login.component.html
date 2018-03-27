@@ -1,7 +1,6 @@
 <form class="form-signin pt-5 mt-5" novalidate>
-    <!-- <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
 
-    <h1 class="h3 mb-3 font-weight-normal">Please Log in</h1>
+    <!--<h1 class="h3 mb-3 font-weight-normal">Please Log in</h1>-->
     <label for="username" class="sr-only">Username</label>
     <input type="text" class="form-control" placeholder="Username" name="username" [(ngModel)]="username" autofocus required>
     <label for="password" class="sr-only">Password</label>
@@ -9,11 +8,124 @@
     <div *ngIf="loginFail" class="alert alert-danger" role="alert">
         {{serverResponse}}
     </div>
-    <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-    </div>
+    <a routerLink="/forgot-password" class="forget-password">
+        <p class="text-center">Forgot your password?</p>
+    </a>
     <button class="btn btn-lg btn-success btn-block" type="button" (click)="onLogin()">Log in</button>
-    <button class="btn btn-lg btn-success btn-block" type="button" (click)="onRegister()">Register</button>
+    <button class="btn btn-lg btn-dark btn-block" type="button" (click)="onSignUp()">Sign up</button>
+
 </form>
+<!--code from https://codepen.io/Dianatomic/pen/yxInL-->
+<div class="text-center m-5">
+    <!-- Notebook icon  -->
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="50.865 67.594 180 180" enable-background="new 50.865 67.594 180 180" xml:space="preserve">
+<g>
+	
+		<rect class="square" x="87.865" y="105.736" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="105.999" height="114.359"/>
+	
+		<line class="line" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="99.649" y1="95.094" x2="99.649" y2="115.798"/>
+	
+		<line class="line" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="113.407" y1="95.094" x2="113.407" y2="115.798"/>
+	
+		<line class="line" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="127.165" y1="95.094" x2="127.165" y2="115.798"/>
+	
+		<line class="line" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="140.922" y1="95.094" x2="140.922" y2="115.798"/>
+	
+		<line class="line" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="154.68" y1="95.094" x2="154.68" y2="115.798"/>
+	
+		<line class="line" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="168.436" y1="95.094" x2="168.436" y2="115.798"/>
+	
+		<line class="line" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="182.194" y1="95.094" x2="182.194" y2="115.798"/>
+	
+		<line class="line" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="113.407" y1="139.115" x2="168.379" y2="139.115"/>
+	
+		<line class="line" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="113.407" y1="157.343" x2="168.379" y2="157.343"/>
+	
+		<line class="line" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="113.407" y1="175.57" x2="168.379" y2="175.57"/>
+	
+		<line class="line" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="113.407" y1="193.799" x2="168.379" y2="193.799"/>
+</g>
+</svg>
+
+
+    <!-- Design icon -->
+
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="63.978 72.896 180 180" enable-background="new 63.978 72.896 180 180" xml:space="preserve">
+<g>
+	
+		<rect class="square" x="150.318" y="102.889" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="5.851" height="5.859"/>
+	
+		<line class="line" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="120.626" y1="105.82" x2="187.328" y2="105.82"/>
+	<path class="circle" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M198.171,105.82c0,2.999-2.404,5.42-5.427,5.42c-2.979,0-5.416-2.421-5.416-5.42c0-2.987,2.438-5.425,5.416-5.425
+		C195.767,100.395,198.171,102.833,198.171,105.82z"/>
+	<path class="circle" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M120.626,105.82c0,2.999-2.408,5.42-5.415,5.42c-2.995,0-5.428-2.421-5.428-5.42c0-2.987,2.433-5.425,5.428-5.425
+		C118.218,100.395,120.626,102.833,120.626,105.82z"/>
+	<path class="circle" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M153.507,108.439l-27.984,52.528c7.539,15.572,11.882,37.995,11.882,37.995c0.671,6.195-0.329,9.039-0.329,9.039h34.315
+		c-1.184-1.007-0.51-8.035-0.51-8.035c1.839-14.894,11.55-38.998,11.55-38.998L153.507,108.439"/>
+	
+		<rect class="square" x="133.138" y="215.493" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="41.678" height="9.902"/>
+	<path class="circle" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M165.06,158.222c0,6.114-4.953,11.07-11.075,11.07c-6.12,0-11.074-4.956-11.074-11.07c0-6.111,4.954-11.071,11.074-11.071
+		C160.106,147.151,165.06,152.11,165.06,158.222z"/>
+</g>
+</svg>
+
+
+    <!-- Maintenance -->
+
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 180 180" enable-background="new 0 0 180 180" xml:space="preserve">
+<g>
+	
+		<line class="line" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="86.011" y1="97.77" x2="96.42" y2="81.408"/>
+	
+		<line class="line" fill="none" stroke="#00AB4E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="50.842" y1="153.088" x2="54.375" y2="147.528"/>
+	
+		<line class="line" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="127.562" y1="32.42" x2="131.104" y2="26.848"/>
+	
+		<line class="line" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="54.544" y1="136.76" x2="51.271" y2="122.079"/>
+	
+		<line class="line" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="65.02" y1="143.415" x2="61.745" y2="128.73"/>
+	
+		<line class="line" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="95.521" y1="70.646" x2="92.254" y2="55.966"/>
+	
+		<line class="line" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="105.994" y1="77.303" x2="102.722" y2="62.616"/>
+	<path class="circle" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M84.531,97.963c13.515,8.594,17.51,26.497,8.912,40.013c-8.587,13.508-26.502,17.503-40.009,8.916
+		c-13.516-8.598-17.501-26.512-8.915-40.019C53.113,93.355,71.023,89.379,84.531,97.963z"/>
+	<path class="circle" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M126.553,31.873c13.51,8.591,17.502,26.507,8.906,40.014c-8.579,13.505-26.496,17.495-40.012,8.906
+		c-13.501-8.589-17.492-26.509-8.913-40.009C95.129,27.271,113.045,23.285,126.553,31.873z"/>
+</g>
+</svg>
+
+    <!-- Code -->
+
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 180 180" enable-background="new 0 0 180 180" xml:space="preserve">
+<g>
+	
+		<rect class="line" x="17.824" y="27.452" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="144.626" height="125"/>
+	
+		<line class="line" fill="none" stroke="#54B848" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="17.824" y1="49.479" x2="162.45" y2="49.479"/>
+	<g>
+		<g>
+			
+				<line class="line" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="73.988" y1="88.452" x2="65.181" y2="97.26"/>
+			
+				<line class="line" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="65.181" y1="97.26" x2="74.104" y2="106.184"/>
+		</g>
+		<g>
+			
+				<line class="line" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="106.188" y1="88.452" x2="114.996" y2="97.26"/>
+			
+				<line class="line" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="114.996" y1="97.26" x2="106.07" y2="106.184"/>
+		</g>
+		
+			<line class="line" fill="none" stroke="#329B32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="98.607" y1="77.278" x2="81.569" y2="118.168"/>
+	</g>
+</g>
+</svg>
+</div>
+<!--code from https://codepen.io/Dianatomic/pen/yxInL /end-->

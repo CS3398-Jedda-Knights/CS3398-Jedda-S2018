@@ -2,5 +2,15 @@
 #appName {
     font-family: 'Pacifico', cursive;
     font-size: 42px;
-    color: #424242;
+    color: #24272B;
+}
+
+li a.nav-link:hover {
+    color: #FDC02F;
+}
+
+div a.dropdown-item:hover {
+    background-color: #FDC02F;
+    color: #F8F9FA;
+    border-radius: 10px;
 }
