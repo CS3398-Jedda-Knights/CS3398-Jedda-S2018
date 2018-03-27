@@ -26,24 +26,20 @@ export class MainLoginComponent implements OnInit {
       "username": this.username,
       "password": this.password
     }
-
     this.loginService.login(body).subscribe( data =>{
         // save the token in local storage
         localStorage.setItem('token', data.access_token);
         this.router.navigate(['/home']);
     }, error => {
         this.serverResponse = 'Incorrect username or password';
-        console.log(error.statusText);
-      // this.password = '';
-      // this.username = '';
-  
+        console.log(error.statusText);  
       this.loginFail = true;
     });
   }
 
-  onSignUp() {
-    this.router.navigate(['/sign-up-page']);
-  }
+  // onSignUp() {
+  //   this.router.navigate(['/sign-up-page']);
+  // }
 
 
 }

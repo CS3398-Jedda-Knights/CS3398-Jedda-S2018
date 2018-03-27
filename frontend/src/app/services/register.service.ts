@@ -18,8 +18,7 @@ export class RegisterService {
 
   signUp(body) {
     this.url = APP_SERVER + 'user/signup';
-    // this.authToken = localStorage.getItem('token');
-    // this.options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':`JWT ${this.authToken}`}) });
+
     this.options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json'})});
 
     return this.http.post(this.url, body, this.options)

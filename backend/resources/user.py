@@ -66,7 +66,7 @@ class UserSignUp(Resource):
         return {"message": "User created successfully."}, 201
 
 class GetUser(Resource):
-    @jwt_required()
+    # @jwt_required()
     def get(self, username):
         user = UserModel.find_by_username(username)
 

@@ -1,3 +1,45 @@
-<div class="container">
-    user-profile works!
+<div class="user-profile">
+    <div class="container">
+        <div class="col-xs-12 user-profile">
+            <div class="row">
+                <div class="content">
+                    <div class="card">
+                        <div class="firstinfo"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/mrvanz/128.jpg" />
+                            <div class="profileinfo">
+                                <h1>{{user.first_name}} {{user.last_name}}</h1>
+                                <h5 class="text-muted">@{{user.username}}</h5>
+                                <h3>{{user.status}}</h3>
+                                <p class="bio">{{user.short_description}}.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="badgescard">Notes<span class="badge badge-secondary">5</span>Flashcards<span class="badge badge-secondary">23</span>Quizzes<span class="badge badge-secondary">3</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--code from https://codepen.io/genarocolusso/pen/xONEXg?limit=all&page=2&q=user+profile -->
+
+<!-- ADD user notes.. quizzes etc here-->
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-xs-12">
+            <div>
+                <h2>Notes</h2>
+                <hr>
+            </div>
+            <div>
+                <h2>Flashcards</h2>
+                <hr>
+            </div>
+            <div>
+                <h2>Quizzes</h2>
+                <hr>
+            </div>
+        </div>
+    </div>
 </div>

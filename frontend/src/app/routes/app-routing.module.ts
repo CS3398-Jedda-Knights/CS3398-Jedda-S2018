@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'notebook', component: NotebookComponent },
   { path: 'flashcards', component: FlashcardsComponent },
   { path: 'take-notes', component: TakeNotesComponent },
-  { path: 'user-profile', component: UserProfileComponent },
+  { path: 'user-profile/:username', component: UserProfileComponent },
   { path: 'sign-up-page', component: SignUpPageComponent },
 
 
