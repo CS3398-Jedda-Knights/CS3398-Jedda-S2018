@@ -5,12 +5,14 @@
                 <div class="row">
                     <div class="content">
                         <div class="card">
-                            <div class="firstinfo"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/mrvanz/128.jpg" />
+                            <div class="firstinfo"><img src="{{user.profile_picture}}" />
                                 <div class="profileinfo">
                                     <h1>{{user.first_name}} {{user.last_name}}</h1>
                                     <h5 class="text-muted">@{{user.username}}</h5>
                                     <h3>{{user.status}}</h3>
                                     <p class="bio">{{user.short_description}}.</p>
+                                    <!-- <p class="bio">Member since: {{user.join_date}}.</p>-->
+
                                 </div>
                             </div>
                         </div>

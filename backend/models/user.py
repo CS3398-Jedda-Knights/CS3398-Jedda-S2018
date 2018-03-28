@@ -16,6 +16,8 @@ class UserModel(db.Model):
     join_date = db.Column('join_date', db.TIMESTAMP)
     active = db.Column('active', db.Boolean, default=False, nullable=False)
     status = db.Column('status', db.String(80))
+    profile_picture = db.Column('profile_picture', db.String(80))
+
 
     notes = db.relationship('NoteModel', secondary='users_notes_relationship', backref='user', lazy='dynamic')
 
@@ -36,6 +38,8 @@ class UserModel(db.Model):
         self.join_date = new_user['join_date']
         self.active = new_user['active']
         self.status = new_user['status']
+        self.profile_picture = new_user['profile_picture']
+
 
     def __repr__(self):
         """This method returns a string representation of the user object"""
@@ -53,7 +57,7 @@ class UserModel(db.Model):
 
         return {'id': self.id, 'first_name': self.first_name, 'last_name': self.last_name, 'username': self.username,
                 'emai': self.email, 'short_description': self.short_description, 'join_date': str_join_date,
-                'active': self.active, 'status': self.status, }
+                'active': self.active, 'status': self.status, 'profile_picture': self.profile_picture}
 
     def save_to_db(self):
         """This methods saves the changes made to a user object and commits those changes to the database"""
