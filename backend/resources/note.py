@@ -9,7 +9,7 @@ parser.add_argument(
 parser.add_argument(
     'username',
     type=str,
-    requried=True)
+    required=True)
 parser.add_argument(
     'body',
     type=str,
@@ -18,7 +18,7 @@ parser.add_argument(
     'subject',
     type=str,
     required=True)
-parset.add_argument(
+parser.add_argument(
     'active',
     type=bool)
 
