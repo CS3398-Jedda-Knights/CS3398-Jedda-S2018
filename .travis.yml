@@ -19,6 +19,7 @@ matrix:
 
 #      script: # the build step
 #       - ng build --prod
+        - npm run build
 
 #      after_script:
 #       - cd ..
