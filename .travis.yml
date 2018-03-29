@@ -8,10 +8,10 @@ matrix:
      script:
       - sh run_travis.sh
       
-    - language: node_js
-      node_js:
-        - "iojs"
-        - "7"
+#    - language: node_js
+#      node_js:
+#        - "iojs"
+#        - "7"
 #      before_script:
 #        - cd frontend
 #       - npm install
