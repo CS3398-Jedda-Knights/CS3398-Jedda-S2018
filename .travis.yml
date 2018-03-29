@@ -9,12 +9,11 @@ matrix:
       - sh run_travis.sh
       
     - language: node_js
-        - "iojs"
         - "7"
-#      before_script:
-#        - cd frontend
-#        - npm install
+      before_script:
+        - cd frontend
+        - npm install
       script:
         - npm run build
-#      after_script:
-#        - cd ..
+      after_script:
+        - cd ..
