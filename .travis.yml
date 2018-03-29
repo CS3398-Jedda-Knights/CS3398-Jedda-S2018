@@ -18,8 +18,7 @@ matrix:
        - npm install
 
       script: # the build step
-       - ng build --prod
-       - npm build
-
+       - ng build 
+       
       after_script:
        - cd ..
