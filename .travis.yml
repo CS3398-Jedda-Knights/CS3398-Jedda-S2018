@@ -9,15 +9,12 @@ matrix:
       - sh run_travis.sh
 
     - language: node_js
-       node_js:
-        - "7" 
-
-       before_script: # commands to run before running scripts
+      node_js:
+        - "7"
+      before_script:
         - cd frontend
         - npm install
-
-       script: # the build step
-        - npm run build
-
-       after_script:
+      script:
+        - npm build
+      after_script:
         - cd ..
