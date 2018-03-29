@@ -8,9 +8,13 @@ only:
 - develop
 
 before_script:
+- cd frontend
 - npm install -g --silent @angular/cli
 - npm install
 
 script:
 - if [ "$TRAVIS_BRANCH" == "master" ]; then ng build --prod; fi
 - if [ "$TRAVIS_BRANCH" != "master" ]; then ng build --dev; fi
+
+after_script:
+- cd ..
