@@ -14,11 +14,9 @@ matrix:
 
        before_script: # commands to run before running scripts
         - cd frontend
-        - npm install -g --silent @angular/cli
         - npm install
 
        script: # the build step
-#       - ng build --prod
         - npm run build
 
        after_script:
