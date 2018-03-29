@@ -5,7 +5,7 @@ node_js:
 branches:
 only:
 - master
-- develop
+- development
 
 before_script:
 - cd frontend
@@ -14,7 +14,7 @@ before_script:
 
 script:
 - if [ "$TRAVIS_BRANCH" == "master" ]; then ng build --prod; fi
-- if [ "$TRAVIS_BRANCH" == "development" ]; then ng build --dev; fi
+- if [ "$TRAVIS_BRANCH" != "master" ]; then ng build --dev; fi
 
 after_script:
 - cd ..
