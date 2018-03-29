@@ -10,11 +10,16 @@ matrix:
       
     - language: node_js
       node_js:
-        - "7"
-      before_script:
-        - cd frontend
-        - npm install
-      script:
-        - npm build
+       - "7" 
+
+      before_script: # commands to run before running scripts
+       - cd frontend
+       - npm install -g --silent @angular/cli
+       - npm install
+
+      script: # the build step
+       - ng build --prod
+       - npm build
+
       after_script:
-        - cd ..
+       - cd ..
