@@ -6,6 +6,6 @@ matrix:
         - cd frontend
         - npm install
       script:
-        - ng build
+        - npm run build
       after_script:
         - cd ..
