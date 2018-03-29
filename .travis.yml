@@ -9,6 +9,7 @@ only:
 before_script:
 - npm install -g --silent firebase-tools
 - npm install -g --silent @angular/cli
+- npm install
 
 script:
 - ng build --prod
