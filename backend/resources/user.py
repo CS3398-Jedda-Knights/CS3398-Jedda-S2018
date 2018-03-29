@@ -51,7 +51,7 @@ class UserSignUp(Resource):
         required=False,
         default="Studying"
     )
-    parser.add_argument('status',
+    parser.add_argument('profile_picture',
         type=str,
         required=False,
         default="http://placeholder.pics/svg/400x400/DEDEDE/000000-E2E2E2/Upload"
