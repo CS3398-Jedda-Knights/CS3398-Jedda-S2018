@@ -1,9 +1,18 @@
-language: node_js
-node_js:
-   - node # will use latest node
+language : node_js
+node_js :
+   - stable
 
-before_script: # commands to run before the build step
+branches:
+   only:
+      - master
+
+before_script:
+   - cd frontend
+   - npm install -g --silent firebase-tools
    - npm install -g --silent @angular/cli
 
-script: # the build step
+script:
    - ng build --prod
+
+after_script:
+   - cd ..
