@@ -9,11 +9,12 @@ matrix:
       - sh run_travis.sh
       
     - language: node_js
+      node_js:
         - "7"
       before_script:
         - cd frontend
         - npm install
       script:
-        - npm run build
+        - ng build
       after_script:
         - cd ..
