@@ -7,3 +7,14 @@ matrix:
       - "3.6"
      script:
       - sh run_travis.sh
+      
+    - language: node_js
+        - "iojs"
+        - "7"
+      before_script:
+        - cd frontend
+        - npm install
+      script:
+        - npm build
+      after_script:
+        - cd ..
