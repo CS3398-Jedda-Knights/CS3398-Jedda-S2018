@@ -1,18 +1,14 @@
 language : node_js
 node_js :
-   - stable
+- stable
 
 branches:
-   only:
-      - master
+only:
+- master
 
 before_script:
-   - cd frontend
-   - npm install -g --silent firebase-tools
-   - npm install -g --silent @angular/cli
+- npm install -g --silent firebase-tools
+- npm install -g --silent @angular/cli
 
 script:
-   - ng build --prod
-
-after_script:
-   - cd ..
+- ng build --prod
