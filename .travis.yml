@@ -5,8 +5,9 @@ matrix:
         - "7"
       before_script:
         - cd frontend
+        - npm install -g --silently @angular/cli
         - npm install
       script:
-        - npm run build
+        - ng build
       after_script:
         - cd ..
