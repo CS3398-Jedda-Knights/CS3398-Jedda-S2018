@@ -1,15 +1,16 @@
-language : node_js
-node_js :
-- stable
+language: node_js
+node_js:
+  - "7"
 
 branches:
-only:
-- master
+  only:
+  - master
+  - develop
 
 before_script:
-- npm install -g --silent firebase-tools
-- npm install -g --silent @angular/cli
-- npm install
+  - npm install -g --silent @angular/cli
+  - npm install
 
 script:
-- ng build --prod
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then ng build --prod; fi
+  - if [ "$TRAVIS_BRANCH" != "master" ]; then ng build --dev; fi
