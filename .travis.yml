@@ -1,16 +1,16 @@
 language: node_js
 node_js:
-  - "7"
+- "7"
 
 branches:
-  only:
-  - master
-  - develop
+only:
+- master
+- develop
 
 before_script:
-  - npm install -g --silent @angular/cli
-  - npm install
+- npm install -g --silent @angular/cli
+- npm install
 
 script:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then ng build --prod; fi
-  - if [ "$TRAVIS_BRANCH" != "master" ]; then ng build --dev; fi
+- if [ "$TRAVIS_BRANCH" == "master" ]; then ng build --prod; fi
+- if [ "$TRAVIS_BRANCH" != "master" ]; then ng build --dev; fi
