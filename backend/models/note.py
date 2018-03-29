@@ -1,4 +1,5 @@
 from db import db
+import datetime
 
 
 class NoteModel(db.Model):
@@ -17,12 +18,13 @@ class NoteModel(db.Model):
     def __init__(self, new_note):
         """This method is used to initialize the user objects"""
 
-        self.username = new_user['username']#from token
-        self.subject = new_user['subject']
-        self.title = new_user['title']
-        self.body = new_user['body']
-        self.create_date = new_user['create_date'] #current timestamp
-        self.active = new_user['active']
+        self.username = new_note['username']#from token
+        self.subject = new_note['subject']
+        self.title = new_note['title']
+        self.body = new_note['body']
+        # self.create_date = new_user['create_date'] #current timestamp
+        self.create_date = datetime.datetime.now()
+        self.active = True 
 
     def __repr__(self):
         """This method returns a string representation of the note object"""
@@ -67,3 +69,11 @@ class NoteModel(db.Model):
     def find_by_id(cls, id):
         """This method is used to find a user by the given id"""
         return cls.query.filter_by(id=id).first()
+
+    @classmethod
+    def jsonlist(cls, notes):
+        notelist = []
+        for note in notes:
+            notelist.append(note.json())
+        
+        return notelist
