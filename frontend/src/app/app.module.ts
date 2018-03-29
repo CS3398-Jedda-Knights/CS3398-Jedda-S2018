@@ -4,8 +4,6 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-
-
 // routes 
 import { AppRoutingModule } from '../app/routes/app-routing.module'
 
@@ -28,7 +26,7 @@ import { TopnavComponent } from './components/topnav/topnav.component';
 import { TakeNotesComponent } from './components/take-notes/take-notes.component';
 
 // services
-import { UserService } from './user.service';
+import { UserService } from './services/user.service';
 import { LoginService } from './services/login.service';
 import { RegisterService } from './services/register.service';
 

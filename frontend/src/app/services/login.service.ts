@@ -24,7 +24,5 @@ export class LoginService {
       return this.http.post(this.url, body, this.options)
       .map((res:Response) => res.json())
       .catch((error: any) => error.json() || 'Server error');
-
   }
-
 }

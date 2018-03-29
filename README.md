@@ -1,5 +1,5 @@
 # CS3398-Jedda-S2018    
-[![Build Status](https://travis-ci.org/CS3398-Jedda-Knights/CS3398-Jedda-S2018.svg?branch=master)](https://travis-ci.org/CS3398-Jedda-Knights/CS3398-Jedda-S2018) 
+[![Build Status](https://travis-ci.org/CS3398-Jedda-Knights/CS3398-Jedda-S2018.svg?branch=development)](https://travis-ci.org/CS3398-Jedda-Knights/CS3398-Jedda-S2018)
 [![Slack Status](http://slack.videojs.com/badge.svg)](https://cs3398s18jedda.slack.com/)
 
 

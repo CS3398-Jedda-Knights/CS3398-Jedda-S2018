@@ -19,14 +19,14 @@ import { SignUpPageComponent } from '../components/sign-up-page/sign-up-page.com
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'login', component: MainLoginComponent},
   { path: 'about', component: MainAboutComponent },
   { path: 'home', component: MainHomeComponent },
   { path: 'notebook', component: NotebookComponent },
   { path: 'flashcards', component: FlashcardsComponent },
   { path: 'take-notes', component: TakeNotesComponent },
-  { path: 'user-profile', component: UserProfileComponent },
+  { path: 'user-profile/:username', component: UserProfileComponent },
   { path: 'sign-up-page', component: SignUpPageComponent },
 
 

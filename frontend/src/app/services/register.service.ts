@@ -11,18 +11,18 @@ const APP_SERVER = 'http://localhost:9000/';
 export class RegisterService {
 
   private url = APP_SERVER;
-  private options: RequestOptions = new RequestOptions({
-    headers: new Headers({ 'Content-Type': 'application/json' })
-  });
+  private authToken;
+  private options;
 
   constructor(private http: Http) { }
 
-  register(body) {
-    this.url = APP_SERVER + 'auth';
+  signUp(body) {
+    this.url = APP_SERVER + 'user/signup';
 
-      return this.http.post(this.url, body, this.options)
-      .map((res:Response) => res.json())
-      .catch((error: any) => error.json() || 'Server error');
+    this.options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json'})});
 
+    return this.http.post(this.url, body, this.options)
+    .map((res:Response) => res.json())
+    .catch((error: any) => error.json() || 'Server error');
   }
 }

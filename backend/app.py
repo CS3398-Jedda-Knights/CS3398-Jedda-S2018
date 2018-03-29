@@ -25,6 +25,7 @@ def create_tables():
 
 jwt = JWT(app, authenticate, identity)  # /auth
 
+api.add_resource(UserSignUp, '/user/signup')
 api.add_resource(GetUser, '/user/<string:username>')
 
 #note resources

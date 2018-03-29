@@ -20,7 +20,7 @@ body {
 
 .form-signin {
     width: 100%;
-    max-width: 330px;
+    max-width: 400px;
     padding: 15px;
     margin: 0 auto;
 }
@@ -41,7 +41,7 @@ body {
     z-index: 2;
 }
 
-.form-signin input[type="email"] {
+.form-signin input[type="text"] {
     margin-bottom: -1px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -52,3 +52,98 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+.forget-password {
+    text-decoration: none;
+}
+
+a.forget-password:hover {
+    color: #FDC02F;
+    text-decoration: none !important;
+}
+
+
+/* css for svg animation */
+
+body {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.square,
+.circle,
+.line {
+    -webkit-animation: 7s crazy infinite;
+    animation: 7s crazy infinite;
+}
+
+@-webkit-keyframes line {
+    0% {
+        stroke-dasharray: 0 600;
+        stroke-dashoffset: 10;
+    }
+    50% {
+        stroke-dasharray: 600 0;
+    }
+    100% {
+        stroke-dasharray: 0 600;
+        stroke-dashoffset: 10;
+    }
+}
+
+@keyframes line {
+    0% {
+        stroke-dasharray: 0 600;
+        stroke-dashoffset: 10;
+    }
+    50% {
+        stroke-dasharray: 600 0;
+    }
+    100% {
+        stroke-dasharray: 0 600;
+        stroke-dashoffset: 10;
+    }
+}
+
+@-webkit-keyframes crazy {
+    0% {
+        stroke-dasharray: 0 600;
+        stroke-dashoffset: 10;
+    }
+    50% {
+        stroke-dasharray: 600 0;
+    }
+    70% {
+        stroke-dasharray: 300 0;
+    }
+    90% {
+        stroke-dasharray: 0 300;
+    }
+    100% {
+        stroke-dasharray: 0 600;
+        stroke-dashoffset: 10;
+    }
+}
+
+@keyframes crazy {
+    0% {
+        stroke-dasharray: 0 600;
+        stroke-dashoffset: 10;
+    }
+    50% {
+        stroke-dasharray: 600 0;
+    }
+    70% {
+        stroke-dasharray: 300 0;
+    }
+    90% {
+        stroke-dasharray: 0 300;
+    }
+    100% {
+        stroke-dasharray: 0 600;
+        stroke-dashoffset: 10;
+    }
+}
+
+
+/* css for svg animation /end*/

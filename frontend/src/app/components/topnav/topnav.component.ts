@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../user.service';
+import { UserService } from '../../services/user.service';
 
 
 @Component({
@@ -15,9 +15,9 @@ export class TopnavComponent implements OnInit {
   }
 
   signOut() {
-    this.user.userName = ""
-    this.user.sections = null;
-    this.user.notes = null;
+    // this.user.userName = ""
+    // this.user.sections = null;
+    // this.user.notes = null;
   }
 
 }
