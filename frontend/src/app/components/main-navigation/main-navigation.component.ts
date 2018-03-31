@@ -20,7 +20,14 @@ export class MainNavigationComponent implements OnInit {
               private jwtHelperService: JwtHelperService) { }
 
   ngOnInit() {
-    this.username = localStorage.getItem('current_user');
+  }
+
+
+  goToUserProfile() {
+    if(this.auth.isUserLoggedIn()) {
+      this.username = localStorage.getItem('current_user');
+      this.router.navigate(['/user-profile', this.username]);
+    }
   }
 
   onLogout() {

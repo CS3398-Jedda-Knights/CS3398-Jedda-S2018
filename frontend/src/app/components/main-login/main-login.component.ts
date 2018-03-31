@@ -38,7 +38,7 @@ export class MainLoginComponent implements OnInit {
     }, error => {
         this.serverResponse = 'Incorrect username or password';
         console.log(error.statusText);  
-        // this.loginFail = true;
+        this.loginFail = true;
     });
   }
 
