@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../../services/login.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-main-navigation',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainNavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: LoginService,
+              private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onLogout() {
+    // clear access token and redirect to the login page
+    localStorage.removeItem('access_token');
+    this.router.navigate(['/login']);
   }
-
 }

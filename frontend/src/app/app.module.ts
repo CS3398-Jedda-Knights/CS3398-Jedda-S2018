@@ -37,6 +37,7 @@ import { TakeNotesComponent } from './components/take-notes/take-notes.component
 import { UserService } from './services/user.service';
 import { LoginService } from './services/login.service';
 import { RegisterService } from './services/register.service';
+import { QuizzesComponent } from './components/quizzes/quizzes.component';
 
 
 export function tokenGetter() {
@@ -57,7 +58,8 @@ export function tokenGetter() {
     MainFooterComponent,
     MainAboutComponent,
     UserProfileComponent,
-    SignUpPageComponent
+    SignUpPageComponent,
+    QuizzesComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,7 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['localhost:9000'],
+        whitelistedDomains: ['localhost:9000', 'localhost:4200'],
         blacklistedRoutes: ['localhost:9000/auth/'],
         authScheme: 'JWT'
       }

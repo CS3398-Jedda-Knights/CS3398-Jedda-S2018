@@ -9,17 +9,17 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink="/about">About</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="auth.isUserLoggedIn()">
                 <a class="nav-link" routerLink="/home">Dashboard</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="auth.isUserLoggedIn()">
                 <a class="nav-link" routerLink="/notebook">Notebooks</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="auth.isUserLoggedIn()">
                 <a class="nav-link" routerLink="/flashcards">Flashcards</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Quizzes</a>
+            <li class="nav-item" *ngIf="auth.isUserLoggedIn()">
+                <a class="nav-link" routerLink="/quizzes">Quizzes</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,10 +34,10 @@
                 </div>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0" *ngIf="auth.isUserLoggedIn()">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <button class="btn btn-success ml-2" routerLink="/login"><i class="far fa-user"></i> Log in</button>
+            <button class="btn btn-success ml-2" (click)="onLogout()"><i class="far fa-user"></i> Logout</button>
         </form>
     </div>
 </nav>

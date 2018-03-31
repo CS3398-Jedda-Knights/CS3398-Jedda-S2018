@@ -18,7 +18,7 @@ import { TakeNotesComponent } from '../components/take-notes/take-notes.componen
 import { NotebookComponent } from '../components/notebook/notebook.component';
 import { UserProfileComponent } from '../components/user-profile/user-profile.component';
 import { SignUpPageComponent } from '../components/sign-up-page/sign-up-page.component';
-
+import { QuizzesComponent } from '../components/quizzes/quizzes.component';
 
 
 const routes: Routes = [
@@ -26,15 +26,16 @@ const routes: Routes = [
   { path: 'login', component: MainLoginComponent},
   { path: 'about', component: MainAboutComponent },
   { path: 'home', component: MainHomeComponent, canActivate: [AuthGuard] },
+  { path: 'user-profile/:username', component: UserProfileComponent, canActivate: [AuthGuard] },
+  { path: 'sign-up-page', component: SignUpPageComponent },
   { path: 'notebook', component: NotebookComponent, canActivate: [AuthGuard] },
   { path: 'flashcards', component: FlashcardsComponent, canActivate: [AuthGuard] },
   { path: 'take-notes', component: TakeNotesComponent, canActivate: [AuthGuard] },
-  { path: 'user-profile/:username', component: UserProfileComponent, canActivate: [AuthGuard]},
-  { path: 'sign-up-page', component: SignUpPageComponent },
+  { path: 'quizzes', component: QuizzesComponent, canActivate: [AuthGuard] },
 
 
   //this is the redirect for garbage routes. (This should be the last route)
-  { path: '**', component: MainHomeComponent },
+  { path: '**', component: MainHomeComponent, canActivate: [AuthGuard] },
 ]
 
 @NgModule({
