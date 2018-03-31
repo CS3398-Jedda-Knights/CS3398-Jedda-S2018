@@ -7,7 +7,11 @@ from flask_cors import CORS
 
 from security import authenticate, identity
 
+<<<<<<< HEAD
 from resources.user import GetUser, UserSignUp
+=======
+from resources.user import GetUser
+>>>>>>> development
 from resources.note import GetNote, GetNotes, CreateNote, UpdateNote
 
 

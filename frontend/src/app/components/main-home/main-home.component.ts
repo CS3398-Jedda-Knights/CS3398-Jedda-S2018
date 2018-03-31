@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UserService } from '../../user.service';
+import { UserService } from '../../services/user.service';
 
 
 @Component({
@@ -23,20 +23,20 @@ export class MainHomeComponent implements OnInit {
     //this.noteViews = ['Hello','World','Good','Bye'];
     //this.sectionsContent = [['It','Works','Yayy!'],['It','Works','Yayy!'],['It','Works','Yayy!']]
 
-    this.sections = this.user.notes;
-    this.noteViews = ['Hello', 'World', 'Good', 'Bye'];
-    this.sectionsContent = this.user.sections;
+    // this.sections = this.user.notes;
+    // this.noteViews = ['Hello', 'World', 'Good', 'Bye'];
+    // this.sectionsContent = this.user.sections;
   }
 
-  addItem() {
-    this.sections.push('New Notes');
-  }
+  // addItem() {
+  //   this.sections.push('New Notes');
+  // }
 
-  userName() {
-    this.str = this.user.userName;
-  }
+  // userName() {
+  //   this.str = this.user.userName;
+  // }
 
-  viewNotes(button0: number) {
-    this.noteViews = this.sectionsContent[button0];
-  }
+  // viewNotes(button0: number) {
+  //   this.noteViews = this.sectionsContent[button0];
+  // }
 }

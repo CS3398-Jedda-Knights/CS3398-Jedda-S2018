@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UserService } from '../../user.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-notebook',
@@ -17,32 +17,32 @@ export class NotebookComponent implements OnInit {
 
   constructor(private user: UserService) {}
 
-  ngOnInit() {
-    //this.sections = ['Electronics','Digital Signal Processing','History'];
-    //this.noteViews = ['Hello','World','Good','Bye'];
-    //this.sectionsContent = [['It','Works','Yayy!'],['It','Works','Yayy!'],['It','Works','Yayy!']]
+  ngOnInit() {}
+  //   //this.sections = ['Electronics','Digital Signal Processing','History'];
+  //   //this.noteViews = ['Hello','World','Good','Bye'];
+  //   //this.sectionsContent = [['It','Works','Yayy!'],['It','Works','Yayy!'],['It','Works','Yayy!']]
 
-    this.sections = this.user.notes;
-    this.noteViews = ['Hello','World','Good','Bye'];
-    this.sectionsContent = this.user.sections;
-  }
+  //   this.sections = this.user.notes;
+  //   this.noteViews = ['Hello','World','Good','Bye'];
+  //   this.sectionsContent = this.user.sections;
+  // }
   
-  addItem() {
-    this.sections.push('New Notes');
-    this.user.userName = "Admin";
-  }
+  // addItem() {
+  //   this.sections.push('New Notes');
+  //   this.user.userName = "Admin";
+  // }
 
-  viewNotes(button0:number) {
-    this.noteViews = this.sectionsContent[button0];
-    this.closeNav();
-  }
+  // viewNotes(button0:number) {
+  //   this.noteViews = this.sectionsContent[button0];
+  //   this.closeNav();
+  // }
 
-  openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-  }
+  // openNav() {
+  //   document.getElementById("mySidenav").style.width = "250px";
+  // }
 
-  closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
+  // closeNav() {
+  //   document.getElementById("mySidenav").style.width = "0";
+  // }
   
 }

@@ -26,27 +26,20 @@ export class MainLoginComponent implements OnInit {
       "username": this.username,
       "password": this.password
     }
-
     this.loginService.login(body).subscribe( data =>{
-        this.router.navigate(['/home']);
-
+        // save the token in local storage
+        localStorage.setItem('token', data.access_token);
+        this.router.navigate(['/user-profile', this.username]);
     }, error => {
-      // if (error.status_code == 401) {
         this.serverResponse = 'Incorrect username or password';
-      // }
-      // else {
-      //   this.serverResponse = 'Failure to connect to the server';
-      // }
-      this.password = '';
-      this.username = '';
-  
+        console.log(error.statusText);  
       this.loginFail = true;
     });
   }
 
-  onRegister() {
-    this.router.navigate(['/sign-up-page']);
-  }
+  // onSignUp() {
+  //   this.router.navigate(['/sign-up-page']);
+  // }
 
 
 }

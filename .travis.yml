@@ -6,7 +6,10 @@ branches:
 only:
 - master
 - development
+<<<<<<< HEAD
 - jh2012
+=======
+>>>>>>> development
 
 before_script:
 - cd frontend
@@ -18,4 +21,8 @@ script:
 - if [ "$TRAVIS_BRANCH" != "master" ]; then ng build --dev; fi
 
 after_script:
+<<<<<<< HEAD
 - cd ..
+=======
+- cd ..
+>>>>>>> development
