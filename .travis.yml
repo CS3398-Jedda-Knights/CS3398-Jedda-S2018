@@ -1,24 +1,21 @@
-matrix:
-  include:
-   - language: python
-     python:
-      - "3.4"
-      - "3.5"
-      - "3.6"
-     script:
-      - sh run_travis.sh
+language: node_js
+node_js:
+- "7"
 
-#    - language: node_js
-#      node_js:
-#       - "7" 
+branches:
+only:
+- master
+- development
+- jh2012
 
-#      before_script: # commands to run before running scripts
-#       - cd frontend
-#       - npm install -g --silent @angular/cli
-#       - npm install
+before_script:
+- cd frontend
+- npm install -g --silent @angular/cli
+- npm install
 
-#      script: # the build step
-#       - ng build --prod
+script:
+- if [ "$TRAVIS_BRANCH" == "master" ]; then ng build --prod; fi
+- if [ "$TRAVIS_BRANCH" != "master" ]; then ng build --dev; fi
 
-#      after_script:
-#       - cd ..
+after_script:
+- cd ..
