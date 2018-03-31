@@ -80,4 +80,13 @@ class GetUser(Resource):
         return {'error': 'User not found'}, 404
 
 
+class GetUserById(Resource):
+    # @jwt_required()
+    def get(self, id):
+        user = UserModel.find_by_id(id)
+
+        if user:
+            return {'user': user.json()}, 200
+        return {'error': 'User not found'}, 404
+
 

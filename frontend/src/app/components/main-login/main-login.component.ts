@@ -31,26 +31,21 @@ export class MainLoginComponent implements OnInit {
       "password": this.password
     }
     this.loginService.login(body).subscribe( data =>{
-        // save the token in local storage
+      // save the token and current user in local storage
       localStorage.setItem('access_token', data.access_token);
-        this.router.navigate(['/user-profile', this.username]);
+      localStorage.setItem('current_user', this.username);
+      this.router.navigate(['/user-profile', this.username]);
     }, error => {
         this.serverResponse = 'Incorrect username or password';
         console.log(error.statusText);  
-      this.loginFail = true;
+        // this.loginFail = true;
     });
-
-    //   console.log(this.jwtHelper.decodeToken(localStorage.getItem('access_token')));
-    // console.log(this.jwtHelper.getTokenExpirationDate()); // date
-    // console.log(this.jwtHelper.isTokenExpired()); // date
-
   }
 
-  onLogOut() {
-    // clear token token and revoke access
-    // localStorage.removeItem('access_token');
-    localStorage.setItem('access_token', 'X');
+  onLogout() {
+    // clear access token and redirect to the login page
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('current_user');
+    this.router.navigate(['/login']);
   }
-
-
 }

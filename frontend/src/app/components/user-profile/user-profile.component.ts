@@ -27,7 +27,5 @@ export class UserProfileComponent implements OnInit {
     }, error=> {
       console.log(error);
     })
-
   }
-
 }
