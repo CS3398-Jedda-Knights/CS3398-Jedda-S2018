@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+// import for guards 
+import { AuthGuard } from '../guards/auth.guard';
+
 // import for main-components
 import { MainLoginComponent } from '../components/main-login/main-login.component';
 import { MainMenuComponent } from '../components/main-menu/main-menu.component';
@@ -22,11 +25,11 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'login', component: MainLoginComponent},
   { path: 'about', component: MainAboutComponent },
-  { path: 'home', component: MainHomeComponent },
-  { path: 'notebook', component: NotebookComponent },
-  { path: 'flashcards', component: FlashcardsComponent },
-  { path: 'take-notes', component: TakeNotesComponent },
-  { path: 'user-profile/:username', component: UserProfileComponent },
+  { path: 'home', component: MainHomeComponent, canActivate: [AuthGuard] },
+  { path: 'notebook', component: NotebookComponent, canActivate: [AuthGuard] },
+  { path: 'flashcards', component: FlashcardsComponent, canActivate: [AuthGuard] },
+  { path: 'take-notes', component: TakeNotesComponent, canActivate: [AuthGuard] },
+  { path: 'user-profile/:username', component: UserProfileComponent, canActivate: [AuthGuard]},
   { path: 'sign-up-page', component: SignUpPageComponent },
 
 

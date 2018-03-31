@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 
 @Component({
   selector: 'app-main-login',
@@ -13,7 +15,9 @@ export class MainLoginComponent implements OnInit {
   private serverResponse = '';
   private loginFail: boolean = false;
 
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private loginService: LoginService, 
+              private router: Router, 
+              public jwtHelper: JwtHelperService) { }
 
 
   ngOnInit() {
@@ -28,18 +32,25 @@ export class MainLoginComponent implements OnInit {
     }
     this.loginService.login(body).subscribe( data =>{
         // save the token in local storage
-        localStorage.setItem('token', data.access_token);
+      localStorage.setItem('access_token', data.access_token);
         this.router.navigate(['/user-profile', this.username]);
     }, error => {
         this.serverResponse = 'Incorrect username or password';
         console.log(error.statusText);  
       this.loginFail = true;
     });
+
+    //   console.log(this.jwtHelper.decodeToken(localStorage.getItem('access_token')));
+    // console.log(this.jwtHelper.getTokenExpirationDate()); // date
+    // console.log(this.jwtHelper.isTokenExpired()); // date
+
   }
 
-  // onSignUp() {
-  //   this.router.navigate(['/sign-up-page']);
-  // }
+  onLogOut() {
+    // clear token token and revoke access
+    // localStorage.removeItem('access_token');
+    localStorage.setItem('access_token', 'X');
+  }
 
 
 }

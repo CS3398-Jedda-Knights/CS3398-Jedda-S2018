@@ -3,9 +3,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+// third party 
+import { JwtModule } from '@auth0/angular-jwt';
+
 
 // routes 
 import { AppRoutingModule } from '../app/routes/app-routing.module'
+
+//guards 
+import { AuthGuard } from '../app/guards/auth.guard';
 
 // components
 import { AppComponent } from './app.component';
@@ -30,6 +38,11 @@ import { UserService } from './services/user.service';
 import { LoginService } from './services/login.service';
 import { RegisterService } from './services/register.service';
 
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,9 +63,18 @@ import { RegisterService } from './services/register.service';
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:9000'],
+        blacklistedRoutes: ['localhost:9000/auth/'],
+        authScheme: 'JWT'
+      }
+    })
   ],
-  providers: [UserService, LoginService, RegisterService],
+  providers: [AuthGuard, UserService, LoginService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

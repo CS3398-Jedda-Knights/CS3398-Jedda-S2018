@@ -15,7 +15,7 @@ export class UserService {
 
   getUser(username) {
     this.url = APP_SERVER + 'user/' + username;
-    this.authToken = localStorage.getItem('token');
+    this.authToken = localStorage.getItem('access_token');
     this.options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization':`JWT ${this.authToken}`}) });
 
     return this.http.get(this.url, username)
