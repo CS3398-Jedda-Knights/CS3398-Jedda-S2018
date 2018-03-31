@@ -6,6 +6,7 @@ branches:
 only:
 - master
 - development
+- Mario
 
 before_script:
 - cd frontend
