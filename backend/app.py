@@ -7,7 +7,8 @@ from flask_cors import CORS
 
 from security import authenticate, identity
 
-from resources.user import GetUser
+from resources.user import GetUser, UserSignUp
+from resources.note import GetNote, GetNotes, CreateNote, UpdateNote
 
 
 app = Flask(__name__)
@@ -24,7 +25,16 @@ def create_tables():
 
 jwt = JWT(app, authenticate, identity)  # /auth
 
+api.add_resource(UserSignUp, '/user/signup')
 api.add_resource(GetUser, '/user/<string:username>')
+
+#note resources
+api.add_resource(GetNote, '/note/<string:id>')
+api.add_resource(GetNotes, '/notes/<string:username>')
+api.add_resource(CreateNote, '/note/add')
+api.add_resource(UpdateNote, '/note/<string:id>')
+
+
 
 # api.add_resource(GetFlashcards, flashcard_routes['read all flashcards']['url'])
 # api.add_resource(CreateFlashcard, flashcard_routes['create new flashcard']['url'])
