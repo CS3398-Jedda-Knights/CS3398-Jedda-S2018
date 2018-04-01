@@ -31,16 +31,46 @@
         <div class="row">
             <div class="col-xs-12">
                 <div>
-                    <h2>Notes</h2>
+                    <h2 data-toggle="collapse" data-target="#collapseNotes" aria-expanded="false" aria-controls="collapseNotes">Notes</h2>
                     <hr>
+                    <div class="collapse mb-5" id="collapseNotes">
+                        <!--<div><i class="fas fa-book ml-5" *ngFor="let note of notes"></i></div>-->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div *ngFor="let note of notes" class="d-inline-flex">
+                                    <div class="box d-inline-flex">
+                                        <div class="paper">{{note}}</div>
+                                        <div [ngClass]="note">
+                                            <div class="strap"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-inline-flex">
+                                    <div class="box d-inline-flex">
+                                        <div class="new-paper">Add</div>
+                                        <div class="new-note">
+                                            <div class="strap"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 pt-5 mt-4 mr-5">
+                                <a class="text-viewall" routerLink="/notes">
+                                    VIEW ALL
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <h2>Flashcards</h2>
+                    <h2 data-toggle="collapse" data-target="#collapseFlashcards" aria-expanded="false" aria-controls="collapseFlashcards">Flashcards</h2>
                     <hr>
+                    <div class="collapse mb-5" id="collapseFlashcards">5 Recent Flashcards</div>
                 </div>
                 <div>
-                    <h2>Quizzes</h2>
+                    <h2 data-toggle="collapse" data-target="#collapseQuizzes" aria-expanded="false" aria-controls="collapseQuizzes">Quizzes</h2>
                     <hr>
+                    <div class="collapse mb-5" id="collapseQuizzes">5 Recent Quiz Sets</div>
                 </div>
             </div>
         </div>

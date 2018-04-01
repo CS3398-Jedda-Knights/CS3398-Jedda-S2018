@@ -30,6 +30,8 @@ export class LoginService {
 
   isUserLoggedIn() {
     if (this.jwtHelper.isTokenExpired()) {
+      // localStorage.removeItem('access_token');
+      // localStorage.removeItem('current_user');
       return false;
     }
     return true;

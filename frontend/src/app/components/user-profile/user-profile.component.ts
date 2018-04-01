@@ -12,6 +12,7 @@ export class UserProfileComponent implements OnInit {
 
   private username: string;
   private user: any;
+  private notes = ['note1', 'note2', 'note3'];
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +27,6 @@ export class UserProfileComponent implements OnInit {
 
     }, error=> {
       console.log(error);
-    })
+    });
   }
 }

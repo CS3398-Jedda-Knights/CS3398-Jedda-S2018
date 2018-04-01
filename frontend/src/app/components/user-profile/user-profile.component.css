@@ -1,3 +1,5 @@
+/* User profile Styles ***********************************************/
+
 .user-profile-card {
     width: 80%;
     height: auto;
@@ -155,4 +157,121 @@ body {
         top: -24px;
         left: -78px;
     }
+}
+
+
+/* Notes Styles ***********************************************/
+
+.box {
+    height: 165px;
+    width: 240px;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.note3 {
+    background-color: rgba(8, 8, 8, 0.7);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 85%;
+    width: 45%;
+    margin: auto;
+    margin-top: 2%;
+    margin-left: 20px;
+    position: absolute;
+}
+
+.note2 {
+    background-color: rgb(31%, 20%, 18%, 0.7);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 85%;
+    width: 45%;
+    margin: auto;
+    margin-top: 2%;
+    margin-left: 20px;
+    position: absolute;
+}
+
+.note1 {
+    background-color: rgb(26%, 26%, 26%, 0.7);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 85%;
+    width: 45%;
+    margin: auto;
+    margin-top: 2%;
+    margin-left: 20px;
+    position: absolute;
+}
+
+.strap {
+    background-color: #1f2123;
+    border-radius: 10px;
+    height: 100%;
+    width: 5%;
+    position: absolute;
+    margin-left: 85%;
+}
+
+.paper {
+    background-color: #cdcdbe;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 5px;
+    border: #161416 5px solid;
+    border-left: #161416 15px solid;
+    height: 84%;
+    width: 43.5%;
+    margin: auto;
+    margin-top: 2.5%;
+    margin-left: 35px;
+    position: absolute;
+}
+
+.new-paper {
+    background-color: #cdcdbe;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 5px;
+    border: #161416 5px dashed;
+    border-left: #161416 5px dashed;
+    height: 84%;
+    width: 43.5%;
+    margin: auto;
+    margin-top: 2.5%;
+    margin-left: 35px;
+    position: absolute;
+    word-wrap: break-word;
+}
+
+.new-note {
+    background-color: rgb(75%, 12%, 14%, 0.7);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 85%;
+    width: 45%;
+    margin: auto;
+    margin-top: 2%;
+    margin-left: 20px;
+    position: absolute;
+}
+
+a.text-viewall {
+    color: rgb(0%, 63%, 71%);
+    font-style: italic;
+}
+
+a.text-viewall:hover {
+    cursor: pointer;
+    color: rgb(94%, 70%, 25%);
 }
