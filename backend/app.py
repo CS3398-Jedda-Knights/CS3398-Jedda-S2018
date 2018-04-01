@@ -1,4 +1,5 @@
 import os
+import datetime
 
 from flask import Flask
 from flask_restful import Api
@@ -24,6 +25,8 @@ def create_tables():
     db.create_all()
 
 jwt = JWT(app, authenticate, identity)  # /auth
+app.config['JWT_EXPIRATION_DELTA'] = datetime.timedelta(days=1)
+
 
 # user resources
 api.add_resource(UserSignUp, '/user/signup')

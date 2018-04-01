@@ -44,5 +44,7 @@ export class NotebookComponent implements OnInit {
   // closeNav() {
   //   document.getElementById("mySidenav").style.width = "0";
   // }
+
+  
   
 }

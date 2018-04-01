@@ -1,13 +1,13 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 
-<!--<div id="navbar" class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+<div id="navbar" class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
     <h3 class="w3-bar-item">Notes</h3>
     <button *ngFor="let section of sections" (click)="viewNotes(this.sections.indexOf(section))" class="w3-bar-item w3-button">{{ section }} <br></button>
-   <!-- <a href="#" class="w3-bar-item w3-button" *ngFor="let section of sections">{{ section }} <br></a>
-</div>-->
+ <a href="#" class="w3-bar-item w3-button" *ngFor="let section of sections">{{ section }} <br></a>
+</div>
 
 <div id="mySidenav" class="sidenav">
     <a class="closebtn" (click)="closeNav()">&times;</a>
@@ -16,10 +16,10 @@
 
 <a style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</a>
 
-<!--<div id="main" style="margin-left:25%">
+<div id="main" style="margin-left:25%">
     <div *ngFor="let noteView of noteViews" id="mainText" class="w3-panel w3-light-grey w3-border w3-round">{{ noteView }}</div>
     <button (click)="addItem()">Add</button>
-</div>-->
+</div>
 
 <div id="main" style="margin-left:25%" style='text-align:center'>
     <a *ngFor="let noteView of noteViews" routerLink="/home">
@@ -33,5 +33,18 @@
     </a>
     <div>
         <br><textarea rows="5" style="width:60%;" placeholder="Answer"></textarea>
+    </div>
+</div>
+-->
+<div class="container">
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-8">
+                Notes
+            </div>
+            <div class="col-xs-4">
+                Menu
+            </div>
+        </div>
     </div>
 </div>
