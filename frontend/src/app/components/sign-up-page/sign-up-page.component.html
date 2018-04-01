@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="col-xs-12 mt-5 pb-5">
+        <form class="form-horizontal form-signup mx-auto" role="form">
+            <div class="form-group">
+                <h1 class="text-center text-muted" id="signUpFormHeader">Join Now!</h1>
+                <label for="firstName" class="col-lg-3 control-label text-muted">First Name</label>
+                <div class="col">
+                    <input type="text" id="firstName" placeholder="James" class="form-control" name="first_name" [(ngModel)]="first_name" autofocus required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastName" class="col-lg-3 control-label text-muted">Last Name</label>
+                <div class="col">
+                    <input type="text" id="lastName" placeholder="Kirk" class="form-control" name="last_name" [(ngModel)]="last_name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userName" class="col-lg-3 control-label text-muted">Username</label>
+                <div class="col">
+                    <input type="text" id="username" placeholder="jtkirk69" class="form-control" name="username" [(ngModel)]="username" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-lg-3 control-label text-muted">Email</label>
+                <div class="col">
+                    <input type="email" id="email" placeholder="user@email.com" class="form-control" name="email" [(ngModel)]="email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-lg-3 control-label text-muted">Password</label>
+                <div class="col">
+                    <input type="password" id="password" placeholder="●●●●●●●●" class="form-control" name="password" [(ngModel)]="password" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col col-offset-3">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="mr-2" name="acceptTerms" checked>  I accept the terms and agreements of <a href="#">Notariety</a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="registerFail" class="alert alert-danger" role="alert">
+                {{serverResponse}}
+            </div>
+            <div class="form-group">
+                <div class="col col-offset-3">
+                    <button class="btn btn-lg btn-success btn-block" type="button" (click)="onSignup()">Sign up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

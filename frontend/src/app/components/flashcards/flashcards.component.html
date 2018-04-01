@@ -2,8 +2,6 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<app-topnav></app-topnav>
-
 <!--<div id="navbar" class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
     <h3 class="w3-bar-item">Decks</h3>
     <button *ngFor="let deck of decks" (click)="viewFlashcard(this.decks.indexOf(deck))" class="w3-bar-item w3-button">{{ deck }} <br></button>
@@ -16,22 +14,24 @@
 
 <a style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</a>
 
-<div id="main" style = 'text-align:center'>
-    <a routerLink="/Home" style="text-decoration-line:none"><div class="card">
-        <div class="container1">
-            <h4><b>Question</b></h4> 
-        </div>
-        <div class="container2">
-          <h4><b>{{ question }}</b></h4>  
-        </div>
-        <div class="container2">
-            <p>{{ result.split('\n')[0] }}</p>
-            <div id="result">
-                <p>{{ result.split('\n')[1] }}</p>
+<div id="main" style='text-align:center'>
+    <a routerLink="/home" style="text-decoration-line:none">
+        <div class="card">
+            <div class="container1">
+                <h4><b>Question</b></h4>
+            </div>
+            <div class="container2">
+                <h4><b>{{ question }}</b></h4>
+            </div>
+            <div class="container2">
+                <p>{{ result.split('\n')[0] }}</p>
+                <div id="result">
+                    <p>{{ result.split('\n')[1] }}</p>
+                </div>
             </div>
         </div>
-    </div></a>
+    </a>
     <div>
-      <br><input  type="text" id="userinput" #input style="width:60%;" placeholder="Answer" (keyup.enter)="setAnswer(input)" (keyup.enter)="input.value=''">
+        <br><input type="text" id="userinput" #input style="width:60%;" placeholder="Answer" (keyup.enter)="setAnswer(input)" (keyup.enter)="input.value=''">
     </div>
 </div>

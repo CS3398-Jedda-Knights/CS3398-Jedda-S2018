@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "@auth0/angular-jwt": "^1.1.0",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "fontawesome": "^4.7.2",
