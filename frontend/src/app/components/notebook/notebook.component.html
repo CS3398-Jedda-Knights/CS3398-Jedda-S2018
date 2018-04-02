@@ -1,49 +1,27 @@
-<!--<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-
-<div id="navbar" class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
-    <h3 class="w3-bar-item">Notes</h3>
-    <button *ngFor="let section of sections" (click)="viewNotes(this.sections.indexOf(section))" class="w3-bar-item w3-button">{{ section }} <br></button>
- <a href="#" class="w3-bar-item w3-button" *ngFor="let section of sections">{{ section }} <br></a>
-</div>
-
-<div id="mySidenav" class="sidenav">
-    <a class="closebtn" (click)="closeNav()">&times;</a>
-    <a *ngFor="let section of sections" (click)="viewNotes(this.sections.indexOf(section))">{{ section }} <br></a>
-</div>
-
-<a style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</a>
-
-<div id="main" style="margin-left:25%">
-    <div *ngFor="let noteView of noteViews" id="mainText" class="w3-panel w3-light-grey w3-border w3-round">{{ noteView }}</div>
-    <button (click)="addItem()">Add</button>
-</div>
-
-<div id="main" style="margin-left:25%" style='text-align:center'>
-    <a *ngFor="let noteView of noteViews" routerLink="/home">
-        <div class="card">
-            <div class="container">
-                <h4><b>{{ noteView }}</b></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-3">
+            <div class="menu-box">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-notes-tab" data-toggle="pill" href="#v-pills-notes" role="tab" aria-controls="v-pills-notes" aria-selected="true"><span class="mr-2"><i class="far fa-list-alt"></i></span>All Notebooks</a>
+                    <a class="nav-link" id="v-pills-shared-notes-tab" data-toggle="pill" href="#v-pills-shared-notes" role="tab" aria-controls="v-pills-shared-notes" aria-selected="false"> <span class="mr-2"><i class="fas fa-share-alt"></i></span>Shared Notebooks</a>
+                    <a class="nav-link" id="v-pills-add-note-tab" data-toggle="pill" href="#v-pills-add-note" role="tab" aria-controls="v-pills-add-note" aria-selected="false"><span class="mr-2"><i class="fas fa-plus-circle"></i></span>Add a New Notebook</a>
+                </div>
             </div>
         </div>
-    </a>
-    <div>
-        <br><textarea rows="5" style="width:60%;" placeholder="Answer"></textarea>
-    </div>
-</div>
--->
-<div class="container">
-    <div class="col-xs-12">
-        <div class="row">
-            <div class="col-xs-8">
-                Notes
-            </div>
-            <div class="col-xs-4">
-                Menu
+        <div class="col-9 mb-5 pb-5">
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-notes" role="tabpanel" aria-labelledby="v-pills-notes-tab">
+                    <p>List of all notes</p>
+                </div>
+                <div class="tab-pane fade" id="v-pills-shared-notes" role="tabpanel" aria-labelledby="v-pills-shared-notes-tab">
+                    <p>list of share notes</p>
+                </div>
+                <div class="tab-pane fade" id="v-pills-add-note" role="tabpanel" aria-labelledby="v-pills-add-note-tab">
+                    <div class="menu-box">
+                        <app-add-note></app-add-note>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

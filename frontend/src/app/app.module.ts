@@ -38,6 +38,7 @@ import { UserService } from './services/user.service';
 import { LoginService } from './services/login.service';
 import { RegisterService } from './services/register.service';
 import { QuizzesComponent } from './components/quizzes/quizzes.component';
+import { AddNoteComponent } from './components/add-note/add-note.component';
 
 
 export function tokenGetter() {
@@ -59,7 +60,8 @@ export function tokenGetter() {
     MainAboutComponent,
     UserProfileComponent,
     SignUpPageComponent,
-    QuizzesComponent
+    QuizzesComponent,
+    AddNoteComponent
   ],
   imports: [
     BrowserModule,
