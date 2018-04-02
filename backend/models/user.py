@@ -55,8 +55,11 @@ class UserModel(db.Model):
         else:
             str_join_date = None
 
+        if self.notes:
+            pass
+
         return {'id': self.id, 'first_name': self.first_name, 'last_name': self.last_name, 'username': self.username,
-                'emai': self.email, 'short_description': self.short_description, 'join_date': str_join_date,
+                'email': self.email, 'short_description': self.short_description, 'join_date': str_join_date,
                 'active': self.active, 'status': self.status, 'profile_picture': self.profile_picture}
 
     def save_to_db(self):

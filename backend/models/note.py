@@ -8,12 +8,12 @@ class NoteModel(db.Model):
     __tablename__ = 'notes'
 
     id = db.Column('id', db.Integer, primary_key=True)
-    username = db.Column('username', db.String(80), unique=True, nullable=False)
     subject = db.Column('subject', db.String(80))
     title = db.Column('title', db.Text)
     body = db.Column('body', db.Text)
     create_date = db.Column('create_date', db.TIMESTAMP)
-    active = db.Column('active', db.Boolean, default=False, nullable=False) #for archiving?
+    is_shared = db.Column('is_shared', db.Boolean, default=False, nullable=False) #for archiving?
+    shared_users = db.Column('shared_users', db.PickleType)
 
     def __init__(self, new_note):
         """This method is used to initialize the user objects"""
@@ -24,7 +24,7 @@ class NoteModel(db.Model):
         self.body = new_note['body']
         # self.create_date = new_user['create_date'] #current timestamp
         self.create_date = datetime.datetime.now()
-        self.active = True 
+        self.is_shared = False 
 
     def __repr__(self):
         """This method returns a string representation of the note object"""

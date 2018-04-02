@@ -1,5 +1,6 @@
 from flask_restful import Resource, reqparse
 from models.note import NoteModel
+from models.user import UserModel
 
 parser = reqparse.RequestParser()
 parser.add_argument(
@@ -52,9 +53,13 @@ class CreateNote(Resource):
 
         if args:
             new_note = NoteModel(args)
-            new_note.save_to_db()
+            user = UserModel.find_by_username(args['username'])
+
+            if user:
+                user.notes.append(new_note)
+                new_note.save_to_db()
             
-            return {'message': 'Note added'}, 200
+                return {'message': 'Note added'}, 200
         return {'error': 'note unable to be added'}
 
 class UpdateNote(Resource):
