@@ -30,12 +30,20 @@ class GetNote(Resource):
             return {'note': note.json()}, 200
         return {'error': 'Note not found'}, 404
 
-class GetNotes(Resource):
+class GetNotesByUsername(Resource):
     def get(self, username):
         notes = NoteModel.find_by_username(username)
 
         if notes:
-            return {'notes': notes.jsonlist()}, 200
+            return {'notes': NoteModel.jsonlist(notes)}, 200
+        return {'error': 'No notes for this user'}, 404
+
+class GetNotesBySubject(Resource):
+    def get(self, subject):
+        notes = NoteModel.find_by_subject(subject)
+
+        if notes:
+            return {'notes': NoteModel.jsonlist(notes)}, 200
         return {'error': 'No notes for this user'}, 404
 
 class CreateNote(Resource):
@@ -44,6 +52,7 @@ class CreateNote(Resource):
 
         if args:
             new_note = NoteModel(args)
+            new_note.save_to_db()
             
             return {'message': 'Note added'}, 200
         return {'error': 'note unable to be added'}

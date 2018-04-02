@@ -4,7 +4,7 @@ from flask_restful import Resource, reqparse
 from flask_jwt import JWT, jwt_required
 from datetime import datetime
 
-from models.flashcard_models.flashcard import FlashcardModel
+from models.flashcard import FlashcardModel
 
 parser = reqparse.RequestParser()
 
@@ -13,15 +13,15 @@ parser.add_argument('subject', type=str)
 parser.add_argument('question', type=str)
 parser.add_argument('answer', type=str)
 
-class GetFlashcards(Resource):
+class GetFlashcardsBySubject(Resource):
     def get(self, subject):
         flashcards = FlashcardModel.find_by_subject(subject)
 
         if flashcards:
-            return {'Flashcards': flashcards.json()}, 200
+            return {'Flashcards': FlashcardModel.jsonlist(flashcards)}, 200
         return {'error': 'Flashcards not found'}, 400
 
-class FlashcardResource(Resource):
+class GetFlashcard(Resource):
     def get(self, id):
         flashcard = FlashcardModel.find_by_id(id)
 
@@ -29,6 +29,7 @@ class FlashcardResource(Resource):
             return {'Flashcard': flashcard.json()},200
         return {'error': 'Flashcard not found'}, 400
 
+class UpdateFlashcard(Resource):
     def put(self, id):
         flashcard = FlashcardModel.find_by_id(id)
 
@@ -49,9 +50,7 @@ class FlashcardResource(Resource):
 class CreateFlashcard(Resource):
     def post(self):
         args = parser.parse_args()
-        print(args)
         new_flashcard = FlashcardModel(args)
-
 
         new_flashcard.save_to_db()
 

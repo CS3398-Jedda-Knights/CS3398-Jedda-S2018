@@ -9,8 +9,8 @@ from flask_cors import CORS
 from security import authenticate, identity
 
 from resources.user import GetUser, GetUserById, UserSignUp
-from resources.note import GetNote, GetNotes, CreateNote, UpdateNote
-
+from resources.note import GetNote, GetNotesByUsername, GetNotesBySubject, CreateNote, UpdateNote
+from resources.flashcard import GetFlashcard, GetFlashcardsBySubject, CreateFlashcard, UpdateFlashcard	
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
@@ -36,9 +36,16 @@ api.add_resource(GetUserById, '/user/<int:id>')
 
 #note resources
 api.add_resource(GetNote, '/note/<string:id>')
-api.add_resource(GetNotes, '/notes/<string:username>')
+# api.add_resource(GetNotesByUsername, '/notes/<string:username>')
+api.add_resource(GetNotesBySubject, '/notes/<string:subject>')
 api.add_resource(CreateNote, '/note/add')
 api.add_resource(UpdateNote, '/note/<string:id>')
+
+#flashcard resources
+api.add_resource(GetFlashcard, '/flashcard/<string:id>')
+api.add_resource(GetFlashcardsBySubject, '/flashcards/<string:subject>')
+api.add_resource(CreateFlashcard, '/flashcard/add')
+api.add_resource(UpdateFlashcard, '/flashcard/<string:id>')
 
 
 
