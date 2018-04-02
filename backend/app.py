@@ -8,7 +8,7 @@ from flask_cors import CORS
 from security import authenticate, identity
 
 from resources.user import GetUser, GetUserById, UserSignUp
-from resources.note import GetNote, GetNotes, CreateNote, UpdateNote
+from resources.note import GetNote, GetNotesByUsername, GetNotesBySubject, CreateNote, UpdateNote
 
 
 app = Flask(__name__)
@@ -33,7 +33,8 @@ api.add_resource(GetUserById, '/user/<int:id>')
 
 #note resources
 api.add_resource(GetNote, '/note/<string:id>')
-api.add_resource(GetNotes, '/notes/<string:username>')
+# api.add_resource(GetNotesByUsername, '/notes/<string:username>')
+api.add_resource(GetNotesBySubject, '/notes/<string:subject>')
 api.add_resource(CreateNote, '/note/add')
 api.add_resource(UpdateNote, '/note/<string:id>')
 
