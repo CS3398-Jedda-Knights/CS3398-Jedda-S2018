@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 const APP_SERVER = 'http://localhost:9000/';
 
 @Injectable()
-export class RegisterService {
+export class NoteService {
 
   private url = APP_SERVER;
   private authToken;
@@ -16,8 +16,8 @@ export class RegisterService {
 
   constructor(private http: Http) { }
 
-  signUp(body) {
-    this.url = APP_SERVER + 'user/signup';
+  createNote(body) {
+    this.url = APP_SERVER + 'note/add';
 
     this.options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json'})});
 

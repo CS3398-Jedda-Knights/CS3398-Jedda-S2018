@@ -37,6 +37,7 @@ import { TakeNotesComponent } from './components/take-notes/take-notes.component
 import { UserService } from './services/user.service';
 import { LoginService } from './services/login.service';
 import { RegisterService } from './services/register.service';
+import { NoteService} from './services/note.service';
 import { QuizzesComponent } from './components/quizzes/quizzes.component';
 import { AddNoteComponent } from './components/add-note/add-note.component';
 
@@ -78,7 +79,7 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [AuthGuard, UserService, LoginService, RegisterService],
+  providers: [AuthGuard, UserService, LoginService, RegisterService, NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
