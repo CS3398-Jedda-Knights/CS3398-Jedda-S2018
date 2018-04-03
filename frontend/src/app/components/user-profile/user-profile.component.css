@@ -163,14 +163,14 @@ body {
 /* Notes Styles ***********************************************/
 
 .box {
-    height: 165px;
-    width: 240px;
+    height: 185px;
+    width: 280px;
     margin: auto;
     margin-top: 20px;
     position: relative;
 }
 
-.note3 {
+.note {
     background-color: rgba(8, 8, 8, 0.7);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -182,9 +182,11 @@ body {
     margin-top: 2%;
     margin-left: 20px;
     position: absolute;
+    word-wrap: break-word;
 }
 
-.note2 {
+
+/* .note2 {
     background-color: rgb(31%, 20%, 18%, 0.7);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -210,7 +212,7 @@ body {
     margin-top: 2%;
     margin-left: 20px;
     position: absolute;
-}
+} */
 
 .strap {
     background-color: #1f2123;
