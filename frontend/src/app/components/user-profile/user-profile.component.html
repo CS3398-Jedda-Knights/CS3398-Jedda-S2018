@@ -15,7 +15,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="badgescard">Notes<span class="badge badge-secondary">5</span>Flashcards<span class="badge badge-secondary">23</span>Quizzes<span class="badge badge-secondary">3</span>
+                        <div class="badgescard">Notes<span class="badge badge-secondary">{{user.notes.length}}</span>Flashcards<span class="badge badge-secondary">23</span>Quizzes<span class="badge badge-secondary">3</span>
 
                         </div>
                     </div>
@@ -33,8 +33,8 @@
                 <div>
                     <h2 data-toggle="collapse" data-target="#collapseNotes" aria-expanded="false" aria-controls="collapseNotes">Notes</h2>
                     <hr>
-                    <div class="collapse mb-5" id="collapseNotes">
-                        <!--<div><i class="fas fa-book ml-5" *ngFor="let note of notes"></i></div>-->
+                    <div class="mb-5" id="collapseNotes">
+                        <!--collapse <div><i class="fas fa-book ml-5" *ngFor="let note of notes"></i></div>-->
                         <div class="row">
                             <div class="col-xs-12">
                                 <div *ngFor="let note of notes" class="d-inline-flex">
@@ -65,12 +65,12 @@
                 <div>
                     <h2 data-toggle="collapse" data-target="#collapseFlashcards" aria-expanded="false" aria-controls="collapseFlashcards">Flashcards</h2>
                     <hr>
-                    <div class="collapse mb-5" id="collapseFlashcards">5 Recent Flashcards</div>
+                    <div class="mb-5" id="collapseFlashcards">5 Recent Flashcards</div>
                 </div>
                 <div>
                     <h2 data-toggle="collapse" data-target="#collapseQuizzes" aria-expanded="false" aria-controls="collapseQuizzes">Quizzes</h2>
                     <hr>
-                    <div class="collapse mb-5" id="collapseQuizzes">5 Recent Quiz Sets</div>
+                    <div class="mb-5" id="collapseQuizzes">5 Recent Quiz Sets</div>
                 </div>
             </div>
         </div>
