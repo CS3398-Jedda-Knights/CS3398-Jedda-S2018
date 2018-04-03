@@ -55,12 +55,17 @@ class UserModel(db.Model):
         else:
             str_join_date = None
 
-        if self.notes:
-            pass
+        try:
+            notes = []
+            for note in self.notes:
+                notes.append(note.json())
+        except:
+            print("An error occurred while attempting to retrieve the list of notes belonging to {}".format(self.username))
 
+        print(notes)
         return {'id': self.id, 'first_name': self.first_name, 'last_name': self.last_name, 'username': self.username,
                 'email': self.email, 'short_description': self.short_description, 'join_date': str_join_date,
-                'active': self.active, 'status': self.status, 'profile_picture': self.profile_picture}
+                'active': self.active, 'status': self.status, 'profile_picture': self.profile_picture, 'notes': notes}
 
     def save_to_db(self):
         """This methods saves the changes made to a user object and commits those changes to the database"""

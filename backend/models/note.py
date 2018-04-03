@@ -40,8 +40,8 @@ class NoteModel(db.Model):
         else:
             str_create_date = None
 
-        return {'id': self.id, 'subject': self.subject, 'title': self.title, 'username': self.username,
-                'body': self.body, 'create_date': str_create_date, 'active': self.active}
+        return {'id': self.id, 'subject': self.subject, 'title': self.title, 
+                'body': self.body, 'create_date': str_create_date}
 
     def save_to_db(self):
         """This methods saves the changes made to a user object and commits those changes to the database"""
