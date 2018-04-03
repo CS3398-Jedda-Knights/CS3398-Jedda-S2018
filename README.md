@@ -14,10 +14,15 @@ Notariety is an application primarily aimed at allowing users to create notes, f
 + The models for user and flashcard have been created
 + The database for the application has been setup
 + The main navigation bar and template for notes and flashcards have been implemented
++ Integrating the frontend and backend (i.e establishing services in Angular to access the Flask APIs')
++ Users are able to sign up and be stored in the database
++ User profile page set up
++ Website looks aesthetically pleasing
 ```
 ###### In Progress:
 ``` diff
-- Integrating the frontend and backend (i.e establishing services in Angular to access the Flask APIs')
+- Setting up the relationships for the database for users' notebooks
+- Have users' notes be displayed in appropriate section
 ```
 
 ### Tech-Stack
