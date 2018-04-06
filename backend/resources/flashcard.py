@@ -5,6 +5,7 @@ from flask_jwt import JWT, jwt_required
 from datetime import datetime
 
 from models.flashcard import FlashcardModel
+from models.user import UserModel
 
 parser = reqparse.RequestParser()
 
@@ -50,8 +51,15 @@ class UpdateFlashcard(Resource):
 class CreateFlashcard(Resource):
     def post(self):
         args = parser.parse_args()
-        new_flashcard = FlashcardModel(args)
 
-        new_flashcard.save_to_db()
+        if args: 
+            new_flashcard = FlashcardModel(args)
+            # user = UserModel.find_by_username(args['username'])
 
-        return {'message': 'Flashcard created'}, 200
+            # if user:
+                # user.flashcards.append(new_flashcard)
+            new_flashcard.save_to_db()
+
+            return {'message': 'Flashcard added'}, 200
+        return{'error': 'flashcard unable to be added'}
+
