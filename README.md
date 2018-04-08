@@ -62,7 +62,12 @@ First, Download and install [Postman](https://www.getpostman.com/)
             ii. Enter the endpoint for the api in the request url, select the method used on that endpoint,  
         enter required information if the request is a POST, PUT, or DELETE http method 
             iii. Click the `Send` button and the server's response will be returned
-
+            
+### How access the SQLite Database using a GUI
+* First, download [SQLiteStudio](https://sqlitestudio.pl/index.rvt). (Cross-platform - runs on Windows 9x/2k/XP/2003/Vista/7, Linux, MacOS X and should work on other Unixes (not tested yet)). 
+* Find the `Add a database` button. When prompted with the submenu located the file `data.db` in the backend folder. 
+The gui should now be populated with the database and all existing tables.
+            
 ### Contributors
 * [Kentessa Fanfair](https://github.com/2goldtess)
 * [Emily Beaudoin](https://github.com/erb64) 
