@@ -4,8 +4,8 @@
 
 
 
-### Notariety
-Notariety is an application primarily aimed at allowing users to create notes, flashcards, and quizzes which can be used as study aids for various courses.  
+### Noteriety
+Noteriety is an application primarily aimed at allowing users to create notes, flashcards, and quizzes which can be used as study aids for various subjects.  
 
 ### Project Status
 ###### Completed: 
@@ -14,15 +14,22 @@ Notariety is an application primarily aimed at allowing users to create notes, f
 + The models for user and flashcard have been created
 + The database for the application has been setup
 + The main navigation bar and template for notes and flashcards have been implemented
-+ Integrating the frontend and backend (i.e establishing services in Angular to access the Flask APIs')
-+ Users are able to sign up and be stored in the database
 + User profile page set up
 + Website looks aesthetically pleasing
++ The relationships for users' and their notebooks have been implemented
++ Users are able to sign up and be stored in the database
++ User Login
++ About page 
++ App routes are protected from unauthorized users
 ```
 ###### In Progress:
 ``` diff
+- Integrating the frontend and backend (i.e establishing services in Angular to access the APIs')
 - Setting up the relationships for the database for users' notebooks
 - Have users' notes be displayed in appropriate section
+- Setting up the database relationships for users' and their flashcards
+- Implementing features that will allow the user to edit their profile, notebooks, and flashcards
+- Implementing features that will allow users to share their notebooks or flashcards with other users
 ```
 
 ### Tech-Stack
