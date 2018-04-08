@@ -14,29 +14,29 @@ Noteriety is an application primarily aimed at allowing users to create notes, f
 + The models for user and flashcard have been created
 + The database for the application has been setup
 + The main navigation bar and template for notes and flashcards have been implemented
-+ User profile page set up
-+ Website looks aesthetically pleasing
++ User profile page has been implemented
++ Add styles to make the website look aesthetically pleasing
 + The relationships for users' and their notebooks have been implemented
 + Users are able to sign up and be stored in the database
-+ User Login
-+ About page 
++ User Login feature has been implemented
++ About page has been added
 + App routes are protected from unauthorized users
 ```
 ###### In Progress:
 ``` diff
 - Integrating the frontend and backend (i.e establishing services in Angular to access the APIs')
 - Setting up the relationships for the database for users' notebooks
-- Have users' notes be displayed in appropriate section
 - Setting up the database relationships for users' and their flashcards
+- Implementing features that will allow the user to view their profile, notebooks, and flashcards
 - Implementing features that will allow the user to edit their profile, notebooks, and flashcards
-- Implementing features that will allow users to share their notebooks or flashcards with other users
+- Implementing features that will allow users to share their personal information, notebooks, or flashcards with other users
 ```
 
 ### Tech-Stack
 This is a web application built with:
 1. Angular (Frontend)
 2. Python-Flask-Restful-API (Backend) 
-3. MySQL database (backend) 
+3. SQLite database with SQLAlchemy ORM (backend) 
 
 ### How the Run the Backend Server and the Frontend Server
 First, clone the repository on your machine
