@@ -4,8 +4,8 @@
 
 
 
-### Notariety
-Notariety is an application primarily aimed at allowing users to create notes, flashcards, and quizzes which can be used as study aids for various courses.  
+### Noteriety
+Noteriety is an application primarily aimed at allowing users to create notes, flashcards, and quizzes which can be used as study aids for various subjects.  
 
 ### Project Status
 ###### Completed: 
@@ -14,22 +14,29 @@ Notariety is an application primarily aimed at allowing users to create notes, f
 + The models for user and flashcard have been created
 + The database for the application has been setup
 + The main navigation bar and template for notes and flashcards have been implemented
-+ Integrating the frontend and backend (i.e establishing services in Angular to access the Flask APIs')
++ User profile page has been implemented
++ Add styles to make the website look aesthetically pleasing
++ The relationships for users' and their notebooks have been implemented
 + Users are able to sign up and be stored in the database
-+ User profile page set up
-+ Website looks aesthetically pleasing
++ User Login feature has been implemented
++ About page has been added
++ App routes are protected from unauthorized users
 ```
 ###### In Progress:
 ``` diff
+- Integrating the frontend and backend (i.e establishing services in Angular to access the APIs')
 - Setting up the relationships for the database for users' notebooks
-- Have users' notes be displayed in appropriate section
+- Setting up the database relationships for users' and their flashcards
+- Implementing features that will allow the user to view their profile, notebooks, and flashcards
+- Implementing features that will allow the user to edit their profile, notebooks, and flashcards
+- Implementing features that will allow users to share their personal information, notebooks, or flashcards with other users
 ```
 
 ### Tech-Stack
 This is a web application built with:
 1. Angular (Frontend)
 2. Python-Flask-Restful-API (Backend) 
-3. MySQL database (backend) 
+3. SQLite database with SQLAlchemy ORM (backend) 
 
 ### How the Run the Backend Server and the Frontend Server
 First, clone the repository on your machine
@@ -55,7 +62,12 @@ First, Download and install [Postman](https://www.getpostman.com/)
             ii. Enter the endpoint for the api in the request url, select the method used on that endpoint,  
         enter required information if the request is a POST, PUT, or DELETE http method 
             iii. Click the `Send` button and the server's response will be returned
-
+            
+### How access the SQLite Database using a GUI
+* First, download [SQLiteStudio](https://sqlitestudio.pl/index.rvt). (Cross-platform - runs on Windows 9x/2k/XP/2003/Vista/7, Linux, MacOS X and should work on other Unixes (not tested yet)). 
+* Find the `Add a database` button. When prompted with the submenu located the file `data.db` in the backend folder. 
+The GUI should now be populated with the database and all existing tables.
+            
 ### Contributors
 * [Kentessa Fanfair](https://github.com/2goldtess)
 * [Emily Beaudoin](https://github.com/erb64) 

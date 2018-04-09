@@ -20,11 +20,18 @@ class UserModel(db.Model):
 
 
     notes = db.relationship('NoteModel', secondary='users_notes_relationship', backref='user', lazy='dynamic')
-
+    
     user_notes_relationship = db.Table('users_notes_relationship',
          db.Column('id', db.Integer, primary_key=True),
          db.Column('user_id', db.Integer, db.ForeignKey('users.id')),
          db.Column('note_id', db.Integer, db.ForeignKey('notes.id')))
+
+    # flashcards = db.relationship('FlashcardModel', secondary='users_flashcards_relationship', backref='user', lazy='dynamic')
+
+    # user_flashcards_relationship = db.Table('users_flashcards_relationship',
+    #      db.Column('id', db.Integer, primary_key=True),
+    #      db.Column('user_id', db.Integer, db.ForeignKey('users.id')),
+    #      db.Column('flashcard_id', db.Integer, db.ForeignKey('flashcards.id')))
 
     def __init__(self, new_user):
         """This method is used to initialize the user objects"""
