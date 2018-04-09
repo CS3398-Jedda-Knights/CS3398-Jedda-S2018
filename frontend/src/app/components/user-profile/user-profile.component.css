@@ -20,24 +20,11 @@
     background-color: rebeccapurple;
 }
 
-body,
 .badgescard,
 .firstinfo {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-html {
-    height: 100%;
-}
-
-body {
-    width: 100%;
-    min-height: 100%;
-    background: #30a64a;
-    font-size: 16px;
-    overflow: hidden;
 }
 
 *,
@@ -160,120 +147,155 @@ body {
 }
 
 
-/* Notes Styles ***********************************************/
-
-.box {
-    height: 185px;
-    width: 280px;
-    margin: auto;
-    margin-top: 20px;
-    position: relative;
-}
-
-.note {
-    background-color: rgba(8, 8, 8, 0.7);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    height: 85%;
-    width: 45%;
-    margin: auto;
-    margin-top: 2%;
-    margin-left: 20px;
-    position: absolute;
-    word-wrap: break-word;
-}
-
-
-/* .note2 {
-    background-color: rgb(31%, 20%, 18%, 0.7);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    height: 85%;
-    width: 45%;
-    margin: auto;
-    margin-top: 2%;
-    margin-left: 20px;
-    position: absolute;
-}
-
-.note1 {
-    background-color: rgb(26%, 26%, 26%, 0.7);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    height: 85%;
-    width: 45%;
-    margin: auto;
-    margin-top: 2%;
-    margin-left: 20px;
-    position: absolute;
-} */
-
-.strap {
-    background-color: #1f2123;
-    border-radius: 10px;
-    height: 100%;
-    width: 5%;
-    position: absolute;
-    margin-left: 85%;
-}
-
-.paper {
-    background-color: #cdcdbe;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 5px;
-    border: #161416 5px solid;
-    border-left: #161416 15px solid;
-    height: 84%;
-    width: 43.5%;
-    margin: auto;
-    margin-top: 2.5%;
-    margin-left: 35px;
-    position: absolute;
-}
-
-.new-paper {
-    background-color: #cdcdbe;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 5px;
-    border: #161416 5px dashed;
-    border-left: #161416 5px dashed;
-    height: 84%;
-    width: 43.5%;
-    margin: auto;
-    margin-top: 2.5%;
-    margin-left: 35px;
-    position: absolute;
-    word-wrap: break-word;
-}
-
-.new-note {
-    background-color: rgb(75%, 12%, 14%, 0.7);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    height: 85%;
-    width: 45%;
-    margin: auto;
-    margin-top: 2%;
-    margin-left: 20px;
-    position: absolute;
-}
+/* Notebook Styles ***********************************************/
 
 a.text-viewall {
     color: rgb(0%, 63%, 71%);
     font-style: italic;
+    margin-left: 4rem;
+    margin-right: 1rem;
 }
 
 a.text-viewall:hover {
     cursor: pointer;
     color: rgb(94%, 70%, 25%);
+}
+
+.main-content {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.moleskine-wrapper {
+    max-width: calc(100% / 4);
+    min-width: 10em;
+}
+
+.moleskine-notebook {
+    height: 250px;
+    width: 175px;
+    position: relative;
+    transition: .4s ease-in-out;
+    border-radius: 5px 15px 15px 5px;
+    transform-origin: left center 0px;
+    display: inline-block;
+    margin: 30px;
+    perspective: 800px;
+}
+
+.moleskine-notebook:hover {
+    transform: rotateZ(-10deg);
+    cursor: pointer;
+}
+
+.moleskine-notebook:hover .notebook-cover {
+    transform: rotateY(-50deg);
+    z-index: 999;
+    box-shadow: 20px 10px 50px rgba(0, 0, 0, 0.2);
+}
+
+.notebook-cover {
+    background: #cc4b48;
+    height: 250px;
+    width: 175px;
+    position: absolute;
+    border-radius: 5px 15px 15px 5px;
+    z-index: 10;
+    transition: .5s linear;
+    transform-style: preserve-3d;
+    transform-origin: left center 0px;
+}
+
+.notebook-cover:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: calc(100% + 2px);
+    top: -1px;
+    z-index: 100;
+    border-radius: 2px;
+    right: 25px;
+    transition: 2s ease;
+    background: linear-gradient(to right, #9c2e2b 0%, #cc4b48 12%, #9c2e2b 25%, #cc4b48 37%, #9c2e2b 50%, #cc4b48 62%, #9c2e2b 75%, #cc4b48 87%, #9c2e2b 100%);
+}
+
+.notebook-cover.blue {
+    background: #2e95aa;
+}
+
+.notebook-cover.black {
+    background: #25272B;
+}
+
+.notebook-cover.blue:before {
+    background: linear-gradient(to right, #1e606e 0%, #2e95aa 12%, #1e606e 25%, #2e95aa 37%, #1e606e 50%, #2e95aa 62%, #1e606e 75%, #2e95aa 87%, #1e606e 100%);
+}
+
+.notebook-cover.green {
+    background: #abc3b5;
+}
+
+.notebook-cover.green:before {
+    background: linear-gradient(to right, #7ea38e 0%, #abc3b5 12%, #7ea38e 25%, #abc3b5 37%, #7ea38e 50%, #abc3b5 62%, #7ea38e 75%, #abc3b5 87%, #7ea38e 100%);
+}
+
+.notebook-cover.yellow {
+    background: #fed754;
+}
+
+.notebook-cover.yellow:before {
+    background: linear-gradient(to right, #ebb501 0%, #fed754 12%, #ebb501 25%, #fed754 37%, #ebb501 50%, #fed754 62%, #ebb501 75%, #fed754 87%, #ebb501 100%);
+}
+
+.notebook-skin {
+    height: 50px;
+    background: #e8e8e0;
+    margin-top: 80px;
+    padding: 15px;
+    font-size: 12px;
+    position: relative;
+    z-index: 10;
+    color: #222;
+    text-align: left;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    /* overflow-wrap: break-word; */
+}
+
+.notebook-skin:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    left: 0;
+    bottom: 0;
+    background: #cddc39;
+}
+
+.notebook-page {
+    height: 100%;
+    width: 175px;
+    position: absolute;
+    background-color: #fbfae8;
+    z-index: 0;
+    border-radius: 5px 16px 16px 5px;
+    overflow: hidden;
+}
+
+.notebook-page.ruled {
+    background: linear-gradient(to bottom, #fbfae8 9px, #e4e4e4 1px);
+    background-size: 100% 10px;
+}
+
+.notebook-page.squared {
+    background-image: linear-gradient(#e4e4e4 1px, transparent 1px), linear-gradient(90deg, #e4e4e4 1px, transparent 1px);
+    background-size: 10px 10px, 10px 10px, 2px 2px, 2px 2px;
+}
+
+.notebook-page.dotted {
+    background: linear-gradient(90deg, #fbfae8 10px, transparent 1%) center, linear-gradient(#fbfae8 10px, transparent 1%) center, #999;
+    background-size: 11px 11px;
 }

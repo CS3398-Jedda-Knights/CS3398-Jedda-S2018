@@ -23,9 +23,6 @@
             </div>
         </div>
     </div>
-
-    <!--code from https://codepen.io/genarocolusso/pen/xONEXg?limit=all&page=2&q=user+profile -->
-
     <!-- ADD user notes.. quizzes etc here-->
     <div class="container mt-5 mb-5">
         <div class="row">
@@ -34,31 +31,21 @@
                     <h2 data-toggle="collapse" data-target="#collapseNotes" aria-expanded="false" aria-controls="collapseNotes">Notebooks</h2>
                     <hr>
                     <div class="mb-5" id="collapseNotes">
-                        <!--collapse <div><i class="fas fa-book ml-5" *ngFor="let note of notes"></i></div>-->
                         <div class="row">
                             <div class="col-xs-12">
-                                <div *ngFor="let note of user.notes" class="d-inline-flex">
-                                    <div class="box d-inline-flex">
-                                        <div class="paper">{{note.subject}}</div>
-                                        <!--<div [ngClass]="note">-->
-                                        <div class="note">
-                                            <div class="strap"></div>
+                                <div class="main-content">
+                                    <div class="moleskine-wrapper" *ngFor="let note of notes">
+                                        <div class="moleskine-notebook">
+                                            <div class="notebook-cover blue">
+                                                <div class="notebook-skin">{{note.subject}}</div>
+                                            </div>
+                                            <div class="notebook-page ruled"></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="d-inline-flex">
-                                    <div class="box d-inline-flex">
-                                        <div class="new-paper">Add</div>
-                                        <div class="new-note">
-                                            <div class="strap"></div>
-                                        </div>
+                                    <div routerLink="/notebook" class="moleskine-wrapper pt-5 mt-5 text-viewall">
+                                        <a class="text-viewall">VIEW ALL</a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xs-12 pt-5 mt-4 mr-5">
-                                <a class="text-viewall" routerLink="/notebook">
-                                    VIEW ALL
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -77,3 +64,6 @@
         </div>
     </div>
 </div>
+<!--CSS Style Credits -->
+<!--code from https://codepen.io/genarocolusso/pen/xONEXg?limit=all&page=2&q=user+profile -->
+<!--code from https://codepen.io/oliviale/pen/bLYQQE -->

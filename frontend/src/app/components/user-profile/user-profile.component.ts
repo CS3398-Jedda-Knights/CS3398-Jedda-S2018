@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { UserService } from '../../services/user.service';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-user-profile',
@@ -12,7 +13,7 @@ export class UserProfileComponent implements OnInit {
 
   private username: string;
   private user: any;
-  private notes = ['note1', 'note2', 'note3'];
+  private notes;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,8 +24,14 @@ export class UserProfileComponent implements OnInit {
     this.username = this.route.snapshot.paramMap.get('username');
     this.userService.getUser(this.username).subscribe(data =>{
       this.user = data['user'];
-      console.log(this.user);
+      // console.log(this.user);
 
+      this.notes = this.user.notes;
+
+      if (this.notes.length > 4) {
+        this.notes = this.notes.slice(0, 4);
+      }
+      // console.log(this.notes);
     }, error=> {
       console.log(error);
     });
