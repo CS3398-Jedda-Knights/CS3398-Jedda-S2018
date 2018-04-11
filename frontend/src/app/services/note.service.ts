@@ -25,4 +25,26 @@ export class NoteService {
     .map((res: Response) => res.json())
     .catch((error: any) => error.json() || 'Server error');
   }
+
+  getNoteByID(id) {
+    this.url = APP_SERVER + 'note/' + id;
+    
+    this.authToken = localStorage.getItem('access_token');
+    this.options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': `JWT ${this.authToken}` }) });
+    
+    return this.http.get(this.url, id)
+      .map((res: Response) => res.json())
+      .catch((error: any) => error.json() || 'Server error');
+  }
+
+  getNoteBySubject(subject) {
+    this.url = APP_SERVER + 'note/' + subject;
+    
+    this.authToken = localStorage.getItem('access_token');
+    this.options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': `JWT ${this.authToken}` }) });
+    
+    return this.http.get(this.url, subject)
+      .map((res: Response) => res.json())
+      .catch((error: any) => error.json() || 'Server error');
+  }
 }
