@@ -54,12 +54,11 @@ class CreateFlashcard(Resource):
 
         if args: 
             new_flashcard = FlashcardModel(args)
-            # user = UserModel.find_by_username(args['username'])
+            user = UserModel.find_by_username(args['username'])
 
-            # if user:
-                # user.flashcards.append(new_flashcard)
-            new_flashcard.save_to_db()
+            if user:
+                user.flashcards.append(new_flashcard)
+                new_flashcard.save_to_db()
 
             return {'message': 'Flashcard added'}, 200
         return{'error': 'flashcard unable to be added'}
-
