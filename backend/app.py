@@ -8,7 +8,7 @@ from flask_cors import CORS
 
 from security import authenticate, identity
 
-from resources.user import GetUser, GetUserById, UserSignUp
+from resources.user import GetUser, GetUserById, UserSignUp, UpdateUserFullName
 from resources.note import GetNote, GetNotesByUsername, GetNotesBySubject, CreateNote, UpdateNote
 from resources.flashcard import GetFlashcard, GetFlashcardsBySubject, CreateFlashcard, UpdateFlashcard	
 
@@ -32,6 +32,8 @@ def create_tables():
 api.add_resource(UserSignUp, '/user/signup')
 api.add_resource(GetUser, '/user/<string:username>')
 api.add_resource(GetUserById, '/user/<int:id>')
+api.add_resource(UpdateUserFullName, '/user/update_fn/<string:username>')
+
 
 
 #note resources

@@ -90,3 +90,39 @@ class GetUserById(Resource):
         return {'error': 'User not found'}, 404
 
 
+class UpdateUserFullName(Resource):
+    parser = reqparse.RequestParser()
+    parser.add_argument('first_name',
+        type=str
+    )
+    parser.add_argument('last_name',
+        type=str
+    )                
+    def put(self, username):
+        
+        data = UpdateUserFullName.parser.parse_args()
+        user = UserModel.find_by_username(username)
+        user_info_updated = False
+            
+        if user:
+            if data['first_name'] is not None:
+                user.first_name = data['first_name']
+                user_info_updated = True
+            if data['last_name'] is not None:
+                user.last_name = data['last_name']
+                user_info_updated = True
+
+            if user_info_updated:
+                user.save_to_db()
+                return {'message': 'User information updated successfully'}, 200
+            return {'message': 'Invalid information was provided. No changes were made to the user\'s data'}, 200
+        return {'error': 'User not found'}, 404
+
+        
+
+            
+        
+
+    
+
+
