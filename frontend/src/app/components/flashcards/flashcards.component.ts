@@ -7,58 +7,19 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./flashcards.component.css']
 })
 export class FlashcardsComponent implements OnInit {
-  decks:string[];
-  flashcards:string[][][];
-  flashcardViews:string[][];
-  question:string;
-  answer:string;
-  result:string;
-  current:number;
-  input:string = "";
+  private user;
+  private username;
+  constructor(private userService: UserService) { }
 
-  constructor(private user: UserService) { }
+  ngOnInit() {
+    this.username = localStorage.getItem('current_user');
 
-  ngOnInit() {}
-  // ngOnInit() {
-  //   this.decks = this.user.decks;
-  //   this.flashcards = this.user.flashcards;
-  //   this.current = 0;
-  //   this.flashcardViews = [['Question1','Answer1'],['Question2','Answer2'],['Question3','Answer3']];
-  //   this.answer = this.flashcardViews[this.current][1];
-  //   this.question = this.flashcardViews[this.current][0];
-  // }
-
-  // viewFlashcard(deck:number) {
-  //   this.flashcardViews = this.flashcards[deck];
-  //   this.closeNav();
-  // }
-
-  // openNav() {
-  //   document.getElementById("mySidenav").style.width = "250px";
-  // }
-
-  // closeNav() {
-  //   document.getElementById("mySidenav").style.width = "0";
-  // }
-
-  // setAnswer(input) {
-  //   if(this.answer == input.value){
-  //     this.result = this.answer + "\n" + input.value + "  \u2714";
-  //     document.getElementById("result").style.color = "green";
-  //   }else{
-  //     this.result = this.answer + "\n" + input.value + "  \u2716";
-  //     document.getElementById("result").style.color = "red";
-  //   }
-  //   setTimeout(()=>{
-  //     if(this.current < 2){
-  //       this.current++;
-  //     }else{
-  //       this.current = 0;
-  //     }
-  //     this.answer = this.flashcardViews[this.current][1];
-  //     this.question = this.flashcardViews[this.current][0];
-  //     this.result = "";
-  //   },2000);
-  // }
+    this.userService.getUser(this.username).subscribe(data => {
+      this.user = data['user'];
+      // fake flashcard. GRAB REAL DATA WHEN API IS READY
+      this.user.flashcards = [{'question': 'Flyweight', 'answer': 'Flyweight is a software design pattern. A flyweight is an object that minimizes memory use by sharing as much data as possible with other similar objects; it is a way to use objects in large numbers when a simple repeated representation would use an unacceptable amount of memory.'}]
+      console.log(this.user);
+    });
+  }
 
 }

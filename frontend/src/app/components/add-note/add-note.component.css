@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Poiret+One');
-html,
+
+/* html,
 body {
     height: 100%;
 }
@@ -17,7 +18,7 @@ body {
     padding-top: 40px;
     padding-bottom: 40px;
     background-color: #f5f5f5;
-}
+} */
 
 .form-signup {
     font-family: 'Comfortaa', cursive;

@@ -1,37 +1,38 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<!--<div id="navbar" class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
-    <h3 class="w3-bar-item">Decks</h3>
-    <button *ngFor="let deck of decks" (click)="viewFlashcard(this.decks.indexOf(deck))" class="w3-bar-item w3-button">{{ deck }} <br></button>
-</div>-->
-
-<div id="mySidenav" class="sidenav">
-    <a class="closebtn" (click)="closeNav()">&times;</a>
-    <a *ngFor="let deck of decks" (click)="viewFlashcard(this.decks.indexOf(deck))">{{ deck }} <br></a>
-</div>
-
-<a style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</a>
-
-<div id="main" style='text-align:center'>
-    <a routerLink="/home" style="text-decoration-line:none">
-        <div class="card">
-            <div class="container1">
-                <h4><b>Question</b></h4>
-            </div>
-            <div class="container2">
-                <h4><b>{{ question }}</b></h4>
-            </div>
-            <div class="container2">
-                <p>{{ result.split('\n')[0] }}</p>
-                <div id="result">
-                    <p>{{ result.split('\n')[1] }}</p>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-3">
+            <div class="menu-box">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-notes-tab" data-toggle="pill" href="#v-pills-notes" role="tab" aria-controls="v-pills-notes" aria-selected="true"><span class="mr-2"><i class="far fa-list-alt"></i></span>All Flashcards</a>
+                    <a class="nav-link" id="v-pills-shared-notes-tab" data-toggle="pill" href="#v-pills-shared-notes" role="tab" aria-controls="v-pills-shared-notes" aria-selected="false"> <span class="mr-2"><i class="fas fa-share-alt"></i></span>Shared Flashcards</a>
+                    <a class="nav-link" id="v-pills-add-note-tab" data-toggle="pill" href="#v-pills-add-note" role="tab" aria-controls="v-pills-add-note" aria-selected="false"><span class="mr-2"><i class="fas fa-plus-circle"></i></span>Add a New Flashcard</a>
                 </div>
             </div>
         </div>
-    </a>
-    <div>
-        <br><input type="text" id="userinput" #input style="width:60%;" placeholder="Answer" (keyup.enter)="setAnswer(input)" (keyup.enter)="input.value=''">
+        <div class="col-9 mb-5 pb-5">
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-notes" role="tabpanel" aria-labelledby="v-pills-notes-tab">
+                    <div class="menu-box">
+                        <div class="wrapper">
+                            <div class="card">
+                                <!--
+                                <h1 *ngIf="user.flashcards">{{user.flashcards[0].question}}</h1>
+                               <p *ngIf="user.flashcards">{{user.flashcards[0].answer}}</p>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-shared-notes" role="tabpanel" aria-labelledby="v-pills-shared-notes-tab">
+                    <div class="menu-box">list of share flashcards</div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-add-note" role="tabpanel" aria-labelledby="v-pills-add-note-tab">
+                    <div class="menu-box">
+                        <!--add flashcard form goes here-->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<!--https://codepen.io/kholoud840/pen/GEqNWX-->
