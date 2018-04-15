@@ -4,7 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-
 const APP_SERVER = 'http://localhost:9000/';
 
 @Injectable()
@@ -15,7 +14,7 @@ export class NoteService {
   private options;
 
   constructor(private http: Http) { }
-  
+
   createNote(body) {
     this.url = APP_SERVER + 'note/add';
 
