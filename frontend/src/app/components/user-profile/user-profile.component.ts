@@ -33,6 +33,10 @@ export class UserProfileComponent implements OnInit {
       if (this.notes.length > 4) {
         this.notes = this.notes.slice(0, 4);
       }
+
+      if (this.flashcards > 4) {
+        this.flashcards.slice(0, 4);
+      }
       // console.log(this.notes);
     }, error=> {
       console.log(error);

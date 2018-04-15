@@ -50,7 +50,7 @@
     overflow: hidden;
 }
 
-.card:after {
+div.card:after {
     content: '';
     display: block;
     width: 190px;
@@ -173,6 +173,14 @@ a.text-viewall:hover {
     justify-content: center;
     text-align: center;
     text-transform: uppercase;
+}
+
+.flashcard-content {
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
 }
 
 .moleskine-wrapper {
