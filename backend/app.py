@@ -8,7 +8,7 @@ from flask_cors import CORS
 
 from security import authenticate, identity
 
-from resources.user import GetUser, GetUserById, UserSignUp, UpdateUserFullName, UpdateUserStatus
+from resources.user import GetUser, GetUserById, UserSignUp, UpdateUserFullName, UpdateUserStatus, UpdateUserBio
 from resources.note import GetNote, GetNotesByUsername, GetNotesBySubject, CreateNote, UpdateNote
 from resources.flashcard import GetFlashcard, GetFlashcardsBySubject, CreateFlashcard, UpdateFlashcard	
 
@@ -34,6 +34,7 @@ api.add_resource(GetUser, '/user/<string:username>')
 api.add_resource(GetUserById, '/user/<int:id>')
 api.add_resource(UpdateUserFullName, '/user/update_fn/<string:username>')
 api.add_resource(UpdateUserStatus, '/user/update_status/<string:username>')
+api.add_resource(UpdateUserBio, '/user/update_bio/<string:username>')
 
 
 

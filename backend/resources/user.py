@@ -123,20 +123,44 @@ class UpdateUserStatus(Resource):
     parser.add_argument('status',
         type=str,
         required=True,
-        help="User status is required"
+        help='User status is required'
     )
     def put(self, username):
         data = UpdateUserStatus.parser.parse_args()
         user = UserModel.find_by_username(username)
 
-        if data['status'] == '':
-            return {'message': 'Invalid information was provided. No changes were made to the user\'s data'}, 200
+        # may not be needed because user may want to clear their status?
+        # if data['status'] == '':
+        #     return {'message': 'Invalid information was provided. No changes were made to the user\'s data'}, 200
 
         if user:
             user.status = data['status']
             user.save_to_db()
             return {'message': 'User status updated successfully'}, 200
         return {'error': 'User not found'}, 404
+
+
+class UpdateUserBio(Resource):
+    parser = reqparse.RequestParser()
+    parser.add_argument('short_description',
+        type=str,
+        required=True,
+        help='User bio is required.'
+    )
+    def put(self, username):
+        data = UpdateUserBio.parser.parse_args()
+        user = UserModel.find_by_username(username)
+
+        if user:
+            user.short_description = data['short_description']
+            user.save_to_db()
+            return {'message': 'User bio updated successfully'}, 200
+        return {'error': 'User not found'}, 404
+
+            
+
+
+
 
 
 
