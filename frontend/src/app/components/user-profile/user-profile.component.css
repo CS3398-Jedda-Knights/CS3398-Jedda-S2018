@@ -112,6 +112,11 @@
     font-style: initial;
 }
 
+p.member-date {
+    font-size: 0.8rem;
+    color: red;
+}
+
 @keyframes animatop {
     0% {
         opacity: 0;
