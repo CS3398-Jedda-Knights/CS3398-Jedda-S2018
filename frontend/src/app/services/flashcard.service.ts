@@ -16,7 +16,7 @@ export class FlashcardService {
   constructor(private http: Http) {}
 
   createFlashCard(body) {
-    this.url = APP_SERVER + 'flashcards/add';
+    this.url = APP_SERVER + 'flashcard/add';
 
     this.options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json'})});
 

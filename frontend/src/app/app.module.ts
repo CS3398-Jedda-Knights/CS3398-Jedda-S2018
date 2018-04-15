@@ -40,6 +40,7 @@ import { RegisterService } from './services/register.service';
 import { NoteService} from './services/note.service';
 import { QuizzesComponent } from './components/quizzes/quizzes.component';
 import { AddNoteComponent } from './components/add-note/add-note.component';
+import { AddFlashcardComponent } from './add-flashcard/add-flashcard.component';
 
 
 export function tokenGetter() {
@@ -62,7 +63,8 @@ export function tokenGetter() {
     UserProfileComponent,
     SignUpPageComponent,
     QuizzesComponent,
-    AddNoteComponent
+    AddNoteComponent,
+    AddFlashcardComponent
   ],
   imports: [
     BrowserModule,
