@@ -13,6 +13,11 @@
             <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-notes" role="tabpanel" aria-labelledby="v-pills-notes-tab">
                     <div class="menu-box">List of all notes</div>
+                    <div>
+                        <ul class="Notes">
+                            <li *ngFor="note of notes">{{notes}}</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="tab-pane fade" id="v-pills-shared-notes" role="tabpanel" aria-labelledby="v-pills-shared-notes-tab">
                     <div class="menu-box">list of share notes</div>

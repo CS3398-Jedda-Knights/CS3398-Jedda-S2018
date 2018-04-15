@@ -9,15 +9,26 @@ import { UserService } from '../../services/user.service';
 })
 export class NotebookComponent implements OnInit {
 
+  private user;
+  private username;
   sections:string[];
   sectionsContent:string[][];
   noteViews:string[];
   notes:string[];
   str:string = "Hello World!";
 
-  constructor(private user: UserService) {}
+  constructor(private userService: UserService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.username = localStorage.getItem('current_user');
+
+    this.userService.getUser(this.username).subscribe(data => {
+      this.user = data['user'];
+      // fake flashcard. GRAB REAL DATA WHEN API IS READY
+      this.notes = this.user.notes;
+      console.log(this.user);
+    });
+  }
   //   //this.sections = ['Electronics','Digital Signal Processing','History'];
   //   //this.noteViews = ['Hello','World','Good','Bye'];
   //   //this.sectionsContent = [['It','Works','Yayy!'],['It','Works','Yayy!'],['It','Works','Yayy!']]
