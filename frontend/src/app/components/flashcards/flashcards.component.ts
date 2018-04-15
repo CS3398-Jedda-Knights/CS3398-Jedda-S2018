@@ -44,5 +44,5 @@ export class FlashcardsComponent implements OnInit {
       console.log(error);
       this.router.navigate(['/user-profile',this.username]);
     });
-
+  } 
 }
