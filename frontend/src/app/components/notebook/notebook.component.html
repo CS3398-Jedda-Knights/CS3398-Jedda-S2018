@@ -15,7 +15,12 @@
                     <div class="menu-box">List of all notes</div>
                     <div>
                         <ul class="Notes">
-                            <li *ngFor="let note of notes">{{notes}}</li>
+                            <li *ngFor="let note of notes"><div><h4>Subject: {{note.subject}}</h4></div>
+                                <div>
+                                    <h6>Title: {{note.title}}</h6>
+                                </div>
+                                <div class="card-body">{{note.body}}</div>
+                            </li>
                         </ul>
                     </div>
                 </div>
