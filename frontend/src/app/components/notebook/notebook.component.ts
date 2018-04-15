@@ -17,7 +17,7 @@ export class NotebookComponent implements OnInit {
   notes:string[];
   str:string = "Hello World!";
 
-  constructor(private userService: UserService) {}
+  constructor(private route: ActivatedRoute, private userService: UserService) {}
 
   ngOnInit() {
     this.username = localStorage.getItem('current_user');
