@@ -15,7 +15,7 @@ export class NoteService {
   private options;
 
   constructor(private http: Http) { }
-
+  
   createNote(body) {
     this.url = APP_SERVER + 'note/add';
 

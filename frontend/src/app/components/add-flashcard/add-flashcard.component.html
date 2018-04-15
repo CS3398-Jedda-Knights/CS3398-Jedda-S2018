@@ -9,21 +9,21 @@
               </div>
           </div>
           <div class="form-group">
-              <label for="title" class="col-lg-3 control-label text-muted">Title</label>
+              <label for="title" class="col-lg-3 control-label text-muted">Question</label>
               <div class="col">
-                  <input type="text" id="title" class="form-control" name="title" [(ngModel)]="title" required>
+                  <input type="text" id="title" class="form-control" name="title" [(ngModel)]="question" required>
               </div>
           </div>
           <div class="form-group">
-              <label for="note" class="col-lg-3 control-label text-muted">Notes</label>
+              <label for="note" class="col-lg-3 control-label text-muted">Answer</label>
               <div class="col">
-                  <textarea rows="10" id="note" class="form-control" name="note" [(ngModel)]="note" required></textarea>
+                  <textarea rows="10" id="note" class="form-control" name="note" [(ngModel)]="answer" required></textarea>
               </div>
           </div>
 
           <div class="form-group pt-4">
               <div class="col col-offset-3">
-                  <button class="btn btn-lg btn-success btn-block" type="button" (click)="onCreateNote()">Create Note</button>
+                  <button class="btn btn-lg btn-success btn-block" type="button" (click)="onCreateFlashCard()">Create Flashcard</button>
               </div>
           </div>
       </form>
