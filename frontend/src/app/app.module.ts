@@ -32,16 +32,16 @@ import { NotebookComponent } from './components/notebook/notebook.component';
 import { FlashcardsComponent } from './components/flashcards/flashcards.component';
 import { TopnavComponent } from './components/topnav/topnav.component';
 import { TakeNotesComponent } from './components/take-notes/take-notes.component';
+import { QuizzesComponent } from './components/quizzes/quizzes.component';
+import { AddNoteComponent } from './components/add-note/add-note.component';
+import { AddFlashcardComponent } from './components/add-flashcard/add-flashcard.component';
 
 // services
 import { UserService } from './services/user.service';
 import { LoginService } from './services/login.service';
 import { RegisterService } from './services/register.service';
 import { NoteService} from './services/note.service';
-import { QuizzesComponent } from './components/quizzes/quizzes.component';
-import { AddNoteComponent } from './components/add-note/add-note.component';
-import { AddFlashcardComponent } from './add-flashcard/add-flashcard.component';
-
+import { FlashcardService } from './services/flashcard.service';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -81,7 +81,7 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [AuthGuard, UserService, LoginService, RegisterService, NoteService],
+  providers: [AuthGuard, UserService, LoginService, RegisterService, NoteService, FlashcardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
