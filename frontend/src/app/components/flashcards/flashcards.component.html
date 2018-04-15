@@ -3,18 +3,21 @@
         <div class="col-3">
             <div class="menu-box">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="v-pills-notes-tab" data-toggle="pill" href="#v-pills-notes" role="tab" aria-controls="v-pills-notes" aria-selected="true"><span class="mr-2"><i class="far fa-list-alt"></i></span>All Flashcards</a>
-                    <a class="nav-link" id="v-pills-shared-notes-tab" data-toggle="pill" href="#v-pills-shared-notes" role="tab" aria-controls="v-pills-shared-notes" aria-selected="false"> <span class="mr-2"><i class="fas fa-share-alt"></i></span>Shared Flashcards</a>
-                    <a class="nav-link" id="v-pills-add-note-tab" data-toggle="pill" href="#v-pills-add-note" role="tab" aria-controls="v-pills-add-note" aria-selected="false"><span class="mr-2"><i class="fas fa-plus-circle"></i></span>Add a New Flashcard</a>
+                    <a class="nav-link active" id="v-pills-flashcards-tab" data-toggle="pill" href="#v-pills-flashcards" role="tab" aria-controls="v-pills-flashcards" aria-selected="true"><span class="mr-2"><i class="far fa-list-alt"></i></span>All Flashcards</a>
+                    <a class="nav-link" id="v-pills-shared-flashcards-tab" data-toggle="pill" href="#v-pills-shared-flashcards" role="tab" aria-controls="v-pills-shared-flashcards" aria-selected="false"> <span class="mr-2"><i class="fas fa-share-alt"></i></span>Shared Flashcards</a>
+                    <a class="nav-link" id="v-pills-add-flashcard-tab" data-toggle="pill" href="#v-pills-add-flashcard" role="tab" aria-controls="v-pills-add-flashcard" aria-selected="false"><span class="mr-2"><i class="fas fa-plus-circle"></i></span>Add a New Flashcard</a>
                 </div>
             </div>
         </div>
         <div class="col-9 mb-5 pb-5">
             <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-notes" role="tabpanel" aria-labelledby="v-pills-notes-tab">
+                <div class="tab-pane fade show active" id="v-pills-flashcards" role="tabpanel" aria-labelledby="v-pills-flashcards-tab">
                     <div class="menu-box">
                         <div class="wrapper">
                             <div class="card">
+                                    <ul class="Flashcards">
+                                            <li *ngFor="let flashcard of flashcards"><span class="badge">{{flashcards}}</span></li>
+                                    </ul>
                                 <!--
                                 <h1 *ngIf="user.flashcards">{{user.flashcards[0].question}}</h1>
                                <p *ngIf="user.flashcards">{{user.flashcards[0].answer}}</p>-->
@@ -22,12 +25,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="v-pills-shared-notes" role="tabpanel" aria-labelledby="v-pills-shared-notes-tab">
+                <div class="tab-pane fade" id="v-pills-shared-flashcards" role="tabpanel" aria-labelledby="v-pills-shared-flashcards-tab">
                     <div class="menu-box">list of share flashcards</div>
                 </div>
-                <div class="tab-pane fade" id="v-pills-add-note" role="tabpanel" aria-labelledby="v-pills-add-note-tab">
+                <div class="tab-pane fade" id="v-pills-add-flashcard" role="tabpanel" aria-labelledby="v-pills-add-flashcard-tab">
                     <div class="menu-box">
-                        <!--add flashcard form goes here-->
                         <app-add-flashcard></app-add-flashcard>
                     </div>
                 </div>
