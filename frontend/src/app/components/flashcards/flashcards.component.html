@@ -1,3 +1,9 @@
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      </head>
 <div class="container-fluid mt-5">
     <div class="row">
         <div class="col-3">
@@ -26,10 +32,16 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="v-pills-shared-flashcards" role="tabpanel" aria-labelledby="v-pills-shared-flashcards-tab">
-                    <div class="menu-box">List of Shared Flashcards</div>
+                    <div class="menu-box">List of Shared Flashcardss</div>
                     <div class="tab-pane2" id="v-pills-shared-notes" role="tabpanel" aria-labelledby="v-pills-shared-notes-tab">
-                        <div class="menu-box2">Shared Flashcards not found!</div> 
+                    <div class="menu-box2">Shared Flashcards not found!</div> 
+                    <div class="container"> 
+                            <a href="#" class="btn btn-info btn-lg" style="float: right" routerLink="/flashcards">
+                              <span class="glyphicon glyphicon-trash"></span> Trash 
+                            </a>
+                        </div>
                 </div>
+            </div>
                 <div class="tab-pane fade" id="v-pills-add-flashcard" role="tabpanel" aria-labelledby="v-pills-add-flashcard-tab">
                     <div class="menu-box">
                         <app-add-flashcard></app-add-flashcard>
