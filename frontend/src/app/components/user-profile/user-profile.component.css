@@ -312,3 +312,19 @@ a.text-viewall:hover {
     background: linear-gradient(90deg, #fbfae8 10px, transparent 1%) center, linear-gradient(#fbfae8 10px, transparent 1%) center, #999;
     background-size: 11px 11px;
 }
+
+input {
+    border: none;
+    word-wrap: break-word;
+}
+
+textarea {
+    width: 680px;
+    padding: 5px;
+    border: none;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
