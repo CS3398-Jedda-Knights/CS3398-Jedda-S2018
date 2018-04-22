@@ -139,6 +139,16 @@ class UpdateUserStatus(Resource):
             return {'message': 'User status updated successfully'}, 200
         return {'error': 'User not found'}, 404
 
+class DeactivateUser(Resource):
+    def put(self, username):
+        user = UserModel.find_by_username(username)
+
+        if user:
+            user.active = False
+            user.save_to_db()
+
+            return {'message': 'User deactivated successfully'}, 200
+        return {'error': 'User not found'}, 404
 
 class UpdateUserBio(Resource):
     parser = reqparse.RequestParser()
