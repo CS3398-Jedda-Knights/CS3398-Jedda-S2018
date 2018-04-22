@@ -34,5 +34,44 @@ export class UserService {
       .catch((error: any) => error.json() || 'Server error');
   }
 
+  // Untested 
+  updateUserFullName(username, body) {
+    this.url = APP_SERVER + 'user/update_fn' + username;
+    this.authToken = localStorage.getItem('access_token');
+    this.options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': `JWT ${this.authToken}` }) });
 
+    return this.http.post(this.url,this.options, body)
+      .map((res: Response) => res.json())
+      .catch((error: any) => error.json() || 'Server error');
+  }
+
+  updateUserStatus(username, body) {
+    this.url = APP_SERVER + 'user/update_status' + username;
+    this.authToken = localStorage.getItem('access_token');
+    this.options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': `JWT ${this.authToken}` }) });
+
+    return this.http.post(this.url, this.options, body)
+      .map((res: Response) => res.json())
+      .catch((error: any) => error.json() || 'Server error');
+  }
+
+  updateUserBio(username, body) {
+    this.url = APP_SERVER + 'user/update_bio' + username;
+    this.authToken = localStorage.getItem('access_token');
+    this.options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': `JWT ${this.authToken}` }) });
+
+    return this.http.post(this.url, this.options, body)
+      .map((res: Response) => res.json())
+      .catch((error: any) => error.json() || 'Server error');
+  }
+
+  deactivateUser(username) {
+    this.url = APP_SERVER + 'user/deactivate' + username;
+    this.authToken = localStorage.getItem('access_token');
+    this.options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Authorization': `JWT ${this.authToken}` }) });
+
+    return this.http.delete(this.url, this.options)
+      .map((res: Response) => res.json())
+      .catch((error: any) => error.json() || 'Server error');
+  }
 }
