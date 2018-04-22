@@ -20,10 +20,8 @@ export class FlashcardsComponent implements OnInit {
 
     this.userService.getUser(this.username).subscribe(data => {
       this.user = data['user'];
-      // fake flashcard. GRAB REAL DATA WHEN API IS READY
-      //this.user.flashcards = [{'question': 'Flyweight', 'answer': 'Flyweight is a software design pattern. A flyweight is an object that minimizes memory use by sharing as much data as possible with other similar objects; it is a way to use objects in large numbers when a simple repeated representation would use an unacceptable amount of memory.'}]
       this.flashcards = this.user.flashcards;
-      console.log(this.user);
+      // console.log(this.user);
     });
   }
 }
