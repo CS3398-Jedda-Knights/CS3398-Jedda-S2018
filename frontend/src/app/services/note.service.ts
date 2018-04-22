@@ -46,4 +46,14 @@ export class NoteService {
       .map((res: Response) => res.json())
       .catch((error: any) => error.json() || 'Server error');
   }
+
+  updateNote(body, id) {
+    this.url = APP_SERVER + 'note/' + id;
+
+    this.options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json'})});
+
+    return this.http.put(this.url, body, this.options)
+    .map((res: Response) => res.json())
+    .catch((error: any) => error.json() || 'Server error');
+  }
 }
