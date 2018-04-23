@@ -22,12 +22,12 @@ Noteriety is an application primarily aimed at allowing users to create notes, f
 + About page has been added
 + App routes are protected from unauthorized users
 + Setting up the database relationships for users' and their flashcards
++ Continuously integrating the frontend services with the backend APIs'
++ Updating features that allow the user to view their profile, notebooks, and flashcards
++ Updating features that allow the user to edit their profile, notebooks, and flashcards
 ```
 ###### In Progress:
 ``` diff
-- Continuously integrating the frontend services with the backend APIs'
-- Updating features that allow the user to view their profile, notebooks, and flashcards
-- Updating features that allow the user to edit their profile, notebooks, and flashcards
 - Implementing features that will allow users to share their personal information, notebooks, or flashcards with other users
 ```
 
