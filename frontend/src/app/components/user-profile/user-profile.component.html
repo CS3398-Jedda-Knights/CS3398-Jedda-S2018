@@ -7,11 +7,14 @@
                         <div class="card">
                             <div class="firstinfo"><img src="{{user.profile_picture}}" />
                                 <div class="profileinfo">
-                                    <h1>{{user.first_name}} {{user.last_name}}</h1>
+                                    <!--<h1>{{user.first_name}} {{user.last_name}}</h1>-->
+                                    <input class="h3" type="text" value="{{user.first_name}} {{user.last_name}}" name="new_name" (keyup.enter)="updateName()" [(ngModel)]="new_name">
                                     <h5 class="text-muted">@{{user.username}}</h5>
-                                    <h3>{{user.status}}</h3>
-                                    <p class="bio">{{user.short_description}}</p>
-                                    <p class="member-date text-muted pt-2"><i>Member since: {{user.join_date}}</i></p>
+                                    <!--<h3>{{user.status}}</h3>-->
+                                    <input type="text" class="h5 text-success" name="new_status" (keyup.enter)="updateStatus()" [(ngModel)]="new_status"> <br>
+                                    <!--<p class="bio">{{user.short_description}}</p>-->
+                                    <textarea type="text" class="font-weight-light" name="new_bio" (keyup.enter)="updateBio()" [(ngModel)]="new_bio" rows="4"></textarea>
+                                    <p class="member-date text-muted"><i>Member since: {{user.join_date}}</i></p>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +81,7 @@
                 <div>
                     <h2 data-toggle="collapse" data-target="#collapseQuizzes" aria-expanded="false" aria-controls="collapseQuizzes">Quizzes</h2>
                     <hr>
-                    <div class="mb-5" id="collapseQuizzes">5 Recent Quiz Sets</div>
+                    <div class="mb-5" id="collapseQuizzes">Coming soon!</div>
                 </div>
             </div>
         </div>

@@ -103,7 +103,7 @@ class UpdateUserFullName(Resource):
         data = UpdateUserFullName.parser.parse_args()
         user = UserModel.find_by_username(username)
         user_info_updated = False
-            
+        
         if user:
             if data['first_name'] is not None:
                 user.first_name = data['first_name']
