@@ -70,6 +70,7 @@ export class NotebookComponent implements OnInit {
   }
 
   editNote(note:JSON){
+    console.log(note);
     //document.getElementById(this.currentNotes[this.currentNote]['title']).innerHTML = this.currentNotes[this.currentNote]['body'];
     for(var i = 0; i < this.currentNotes.length; i++){
       if(this.currentNotes[i]['id'] == note['id']){
@@ -77,6 +78,8 @@ export class NotebookComponent implements OnInit {
         this.currentNotes[i]['body'] = document.getElementById("body" + note['title']).textContent;
       }
     }
+    console.log(document.getElementById("title" + note['title']).textContent);
+    console.log(document.getElementById("body" + note['title']).textContent);
 
     let body = {
       "username": localStorage.getItem('current_user'),

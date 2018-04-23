@@ -11,9 +11,9 @@ export class FlashcardsComponent implements OnInit {
   
   private user;
   private username;
-  flashcards: string[];
+  flashcards: JSON[];
   decks: string[] = [];
-  currentDeck: string[] = [];
+  currentDeck: JSON[] = [];
 
   constructor(private userService: UserService) { }
 
@@ -36,5 +36,18 @@ export class FlashcardsComponent implements OnInit {
       }
       console.log(this.user);
     });
+    console.log(this.flashcards);
   }
+
+  viewDeck(subject:string){
+    this.currentDeck = []
+    localStorage.setItem('Current_Subject',subject);
+    for(let flashcard of this.flashcards){
+      if(flashcard['subject'] == subject){
+        this.currentDeck.push(flashcard);
+      }
+    }
+  }
+
+  //viewDeck(deck:string[])
 }
