@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NoteService } from '../../services/note.service';
 import { Router, Route } from '@angular/router';
 
+import { NotebookComponent } from '../notebook/notebook.component';
+
 @Component({
   selector: 'app-add-note',
   templateUrl: './add-note.component.html',
@@ -15,7 +17,9 @@ export class AddNoteComponent implements OnInit {
   private note: string = '';
   //private noteService: NoteService;
 
-constructor(private noteService: NoteService, private router: Router) { }
+constructor(private noteService: NoteService, 
+            private router: Router,
+            private notebookComponent: NotebookComponent) { }
 
   ngOnInit() {}
 
@@ -32,6 +36,7 @@ constructor(private noteService: NoteService, private router: Router) { }
       this.subject = "";
       this.title = "";
       this.note = "";
+      this.notebookComponent.ngOnInit();
     }, error=> {
       console.log(error);
       this.router.navigate(['/user-profile',this.username]);

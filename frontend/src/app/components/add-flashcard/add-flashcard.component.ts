@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FlashcardService } from '../../services/flashcard.service';
 import { Router, Route } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { UserService } from '../../services/user.service';
+import { FlashcardsComponent } from '../flashcards/flashcards.component';
+
 
 @Component({
   selector: 'app-add-flashcard',
@@ -14,7 +19,10 @@ export class AddFlashcardComponent implements OnInit {
   private answer: string;
   private subject: string;
 
-  constructor(private flashCardService: FlashcardService, private router: Router) { }
+  constructor(private flashCardService: FlashcardService, 
+              private router: Router,
+              private userService: UserService,
+              private flashcardsComponents: FlashcardsComponent) { }
 
   ngOnInit() {
 
@@ -33,8 +41,11 @@ export class AddFlashcardComponent implements OnInit {
       this.subject = "";
       this.question = "";
       this.answer = "";
-      //this.router.navigate(['/user-profile', this.username]);
-
+      // this.router.navigate(['/user-profile', this.username]);
+      // this.userService.getUser(this.username).subscribe(data => {
+      //     this.user = data["user"]
+      // })
+      this.flashcardsComponents.ngOnInit();
     }, error=> {
       console.log(error);
       this.router.navigate(['/user-profile',this.username]);
