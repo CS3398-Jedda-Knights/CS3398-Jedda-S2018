@@ -1,8 +1,3 @@
-<!--
-<div>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</div>
-</-->
 <div class="container-fluid mt-5">
     <div class="row">
         <div class="col-3">
@@ -16,39 +11,36 @@
         </div>
         <div class="col-9 mb-5 pb-5">
             <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-notes" role="tabpanel" aria-labelledby="v-pills-notes-tab">
-                    <h1><div class="menu-box">{{currentNotes[0].subject}}</div></h1>
-                    <div>
-                        <ul>
-                            <li *ngFor="let note of currentNotes" class="menu-box">
-                                <div id={{note.title}}>
-                                    <div><h4><div id="title{{note.title}}" class="card-body">{{note.title}}</div></h4></div>
-                                    <div id="body{{note.title}}" class="card-body">{{note.body}}</div>
-                                </div>
-                                <div>
-                                    <button id="edit{{note.title}}" (click)="noteEditor(note)"style="border:none;background:white"><i class="fa fa-edit" style="font-size:36px;color:black;"></i></button>
-                                    <button id="trash{{note.title}}" style="float:right;border:none;background:white"><i class="fa fa-trash" style="font-size:36px;color:black"></i></button>
-                                </div>
-                                <button class="btn btn-lg btn-success btn-block" style="visibility:hidden" type="button" id="button{{note.title}}" (click)="editNote(note)">Edit Note</button>
-                            </li>
-                            <div class="container"> 
-                              <a href="#" class="btn btn-info btn-default" style="float: right" routerLink="/notebook" >
-                                      <span class="glyphicon glyphicon-trash" ></span> Trash 
-                             </a>
+                <div class="tab-pane fade show active menu-box" id="v-pills-notes" role="tabpanel" aria-labelledby="v-pills-notes-tab">
+                    <h1>
+                        <div>{{currentNotes[0].subject}}</div>
+                    </h1>
+                    <hr>
+                    <div *ngFor="let note of currentNotes">
+                        <div id={{note.title}}>
+                            <div>
+                                <h4>
+                                    <div id="title{{note.title}}" class="card-body text-warning">{{note.title}}</div>
+                                </h4>
                             </div>
-                        </ul>
+                            <div id="body{{note.title}}" class="card-body">{{note.body}}</div>
+                        </div>
+                        <div>
+                            <button id="edit{{note.title}}" (click)="noteEditor(note)" style="border:none;background:white"><i class="fa fa-edit pl-3" style="font-size:36px;color:black;"></i></button>
+                            <button id="trash{{note.title}}" style="float:right;border:none;background:white"><i class="fa fa-trash pl-3 text-danger" style="font-size:36px;color:black"></i></button>
+                        </div>
+                        <button class="btn btn-lg btn-success btn-block" style="visibility:hidden" type="button" id="button{{note.title}}" (click)="editNote(note)">Edit Note</button>
                     </div>
+                    <!-- <div>
+                                <a href="#" class="btn btn-info btn-default" style="float: right" routerLink="/notebook">
+                                    <span class="glyphicon glyphicon-trash"></span> Trash
+                                </a>
+                            </div>-->
                 </div>
                 <div class="tab-pane fade" id="v-pills-shared-notes" role="tabpanel" aria-labelledby="v-pills-shared-notes-tab">
-                    <div class="menu-box">List of Shared Notebooks</div> 
-                    <div class="tab-pane2" id="v-pills-shared-notes" role="tabpanel" aria-labelledby="v-pills-shared-notes-tab">
-                        <div class="menu-box2">Shared Notebooks not found!</div>  
-                        <div class="container"> 
-                                <a href="#" class="btn btn-info btn-lg" style="float: right" routerLink="/notebook">
-                                  <span class="glyphicon glyphicon-trash"></span> Trash 
-                                </a>
-                            </div>
-                </div>
+                    <div class="menu-box">
+                        <p>Coming Soon!</p>
+                    </div>
                 </div>
                 <div class="tab-pane fade" id="v-pills-add-note" role="tabpanel" aria-labelledby="v-pills-add-note-tab">
                     <div class="menu-box">

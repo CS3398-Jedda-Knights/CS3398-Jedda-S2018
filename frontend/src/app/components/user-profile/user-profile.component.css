@@ -316,6 +316,7 @@ a.text-viewall:hover {
 input {
     border: none;
     word-wrap: break-word;
+    cursor: pointer;
 }
 
 textarea {

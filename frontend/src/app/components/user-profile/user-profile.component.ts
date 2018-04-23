@@ -31,16 +31,8 @@ export class UserProfileComponent implements OnInit {
       this.new_name = this.user.first_name + ' ' + this.user.last_name;
       this.new_status = this.user.status;
       this.new_bio = this.user.short_description;
-      this.notes = this.user.notes;
-      this.flashcards = this.user.flashcards;
-
-      if (this.notes.length > 4) {
-        this.notes = this.notes.slice(0, 4);
-      }
-
-      if (this.flashcards > 4) {
-        this.flashcards.slice(0, 4);
-      }
+      this.notes = this.user.notes.slice(0,4);
+      this.flashcards = this.user.flashcards.slice(0, 3);
     }, error=> {
       console.log(error);
     });

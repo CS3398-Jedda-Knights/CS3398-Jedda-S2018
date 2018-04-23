@@ -30,6 +30,7 @@
     border-radius: 15px;
     padding: 20px;
 }
+
 .menu-box2 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
@@ -74,3 +75,25 @@
     transform: rotate(6deg);
     z-index: -1;
 }
+
+#userTime,
+#userinput {
+    padding: 0.5px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+#userinput {
+    border-radius: 10px;
+    height: 50px;
+    border-color: #343940;
+}
+
+#userinput:focus {
+    outline: none;
+}
+
+
+/* .btn-xs {
+    border-radius: 10px;
+} */
