@@ -3,7 +3,7 @@
         <div class="col-3">
             <div class="menu-box">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="v-pills-notes-tab" data-toggle="pill" href="#v-pills-notes" role="tab" aria-controls="v-pills-notes" aria-selected="true"><span class="mr-2"><i class="far fa-list-alt"></i></span>All Notebooks</a>
+                    <button class="nav-link" *ngFor="let subject of subjects" (click)="viewNoteBook(subject)" id="v-pills-notes-tab" data-toggle="pill" href="#v-pills-notes" role="tab" aria-controls="v-pills-notes" aria-selected="true"><span class="mr-2"><i class="far fa-list-alt"></i></span>{{subject}}</button>
                     <a class="nav-link" id="v-pills-shared-notes-tab" data-toggle="pill" href="#v-pills-shared-notes" role="tab" aria-controls="v-pills-shared-notes" aria-selected="false"> <span class="mr-2"><i class="fas fa-share-alt"></i></span>Shared Notebooks</a>
                     <a class="nav-link" id="v-pills-add-note-tab" data-toggle="pill" href="#v-pills-add-note" role="tab" aria-controls="v-pills-add-note" aria-selected="false"><span class="mr-2"><i class="fas fa-plus-circle"></i></span>Add a New Notebook</a>
                 </div>
@@ -12,14 +12,19 @@
         <div class="col-9 mb-5 pb-5">
             <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-notes" role="tabpanel" aria-labelledby="v-pills-notes-tab">
-                    <div class="menu-box">List of all notes</div>
+                    <h1><div class="menu-box">{{currentNotes[0].subject}}</div></h1>
                     <div>
-                        <ul class="Notes">
-                            <li *ngFor="let note of notes"><div><h4>Subject: {{note.subject}}</h4></div>
-                                <div>
-                                    <h6>Title: {{note.title}}</h6>
+                        <ul>
+                            <li *ngFor="let note of currentNotes" class="menu-box">
+                                <div id={{note.title}}>
+                                    <div><h4><div id="title{{note.title}}" class="card-body">{{note.title}}</div></h4></div>
+                                    <div id="body{{note.title}}" class="card-body">{{note.body}}</div>
                                 </div>
-                                <div class="card-body">{{note.body}}</div>
+                                <div>
+                                    <button id="edit{{note.title}}" (click)="noteEditor(note)"style="border:none;background:white"><i class="fa fa-edit" style="font-size:36px;color:black;"></i></button>
+                                    <button id="trash{{note.title}}" style="float:right;border:none;background:white"><i class="fa fa-trash" style="font-size:36px;color:black"></i></button>
+                                </div>
+                                <button class="btn btn-lg btn-success btn-block" style="visibility:hidden" type="button" id="button{{note.title}}" (click)="editNote(note)">Edit Note</button>
                             </li>
                         </ul>
                     </div>

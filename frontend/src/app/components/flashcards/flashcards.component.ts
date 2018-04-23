@@ -12,6 +12,8 @@ export class FlashcardsComponent implements OnInit {
   private user;
   private username;
   flashcards: string[];
+  decks: string[] = [];
+  currentDeck: string[] = [];
 
   constructor(private userService: UserService) { }
 
@@ -23,6 +25,15 @@ export class FlashcardsComponent implements OnInit {
       // fake flashcard. GRAB REAL DATA WHEN API IS READY
       //this.user.flashcards = [{'question': 'Flyweight', 'answer': 'Flyweight is a software design pattern. A flyweight is an object that minimizes memory use by sharing as much data as possible with other similar objects; it is a way to use objects in large numbers when a simple repeated representation would use an unacceptable amount of memory.'}]
       this.flashcards = this.user.flashcards;
+      localStorage.setItem('Current_Deck',this.flashcards[0]['subject']);
+      for(let flashcard of this.flashcards){
+        if(flashcard['subject'] == localStorage.getItem('Current_Deck')){
+          this.currentDeck.push(flashcard);
+        }
+        if (!this.decks.includes(flashcard['subject'])){
+          this.decks.push(flashcard['subject']);
+        }
+      }
       console.log(this.user);
     });
   }
