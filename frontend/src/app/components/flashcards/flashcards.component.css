@@ -93,6 +93,10 @@
     outline: none;
 }
 
+.nav-link {
+    outline: none;
+}
+
 
 /* .btn-xs {
     border-radius: 10px;

@@ -44,9 +44,9 @@ export class FlashcardsComponent implements OnInit {
           this.decks.push(flashcard['subject']);
         }
       }
-      console.log(this.user);
+      // console.log(this.user);
     });
-    console.log(this.flashcards);
+    // console.log(this.flashcards);
   }
 
   viewDeck(subject:string){

@@ -17,6 +17,7 @@ export class AddFlashcardComponent implements OnInit {
   constructor(private flashCardService: FlashcardService, private router: Router) { }
 
   ngOnInit() {
+
   }
 
   onCreateFlashCard() {
@@ -26,12 +27,14 @@ export class AddFlashcardComponent implements OnInit {
       "question": this.question,
       "answer": this.answer,
     };
-    // console.log(body)
+    console.log(body);
 
     this.flashCardService.createFlashCard(body).subscribe(data => {
       this.subject = "";
       this.question = "";
       this.answer = "";
+      this.router.navigate(['/user-profile', this.username]);
+
     }, error=> {
       console.log(error);
       this.router.navigate(['/user-profile',this.username]);

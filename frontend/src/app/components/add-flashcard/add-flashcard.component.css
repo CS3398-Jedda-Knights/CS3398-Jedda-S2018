@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Poiret+One');
+.form-signup {
+    font-family: 'Comfortaa', cursive;
+}
+
+.form-signup .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    font-size: 16px;
+}
+
+div input:focus,
+textarea:focus {
+    border: none;
+    border: 1px solid #FDC02F;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
+    margin: 1px;
+}
