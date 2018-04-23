@@ -33,7 +33,7 @@ export class AddFlashcardComponent implements OnInit {
       this.subject = "";
       this.question = "";
       this.answer = "";
-      this.router.navigate(['/user-profile', this.username]);
+      //this.router.navigate(['/user-profile', this.username]);
 
     }, error=> {
       console.log(error);

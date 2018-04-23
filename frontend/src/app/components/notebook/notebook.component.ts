@@ -44,7 +44,7 @@ export class NotebookComponent implements OnInit {
           this.subjects.push(note['subject']);
         }
       }
-      console.log(this.user);
+      //console.log(this.user);
     });
   }
   
@@ -59,7 +59,7 @@ export class NotebookComponent implements OnInit {
   }
 
   noteEditor(note:JSON){
-    console.log(document.getElementById("title" + note['title']).textContent);
+    //console.log(document.getElementById("title" + note['title']).textContent);
     document.getElementById("title" + note['title']).style.border = "1px solid black";
     document.getElementById("body" + note['title']).style.border = "1px solid black";
     document.getElementById("title" + note['title']).contentEditable = "true";
@@ -70,7 +70,7 @@ export class NotebookComponent implements OnInit {
   }
 
   editNote(note:JSON){
-    console.log(note);
+    //console.log(note);
     //document.getElementById(this.currentNotes[this.currentNote]['title']).innerHTML = this.currentNotes[this.currentNote]['body'];
     for(var i = 0; i < this.currentNotes.length; i++){
       if(this.currentNotes[i]['id'] == note['id']){
@@ -78,8 +78,8 @@ export class NotebookComponent implements OnInit {
         this.currentNotes[i]['body'] = document.getElementById("body" + note['title']).textContent;
       }
     }
-    console.log(document.getElementById("title" + note['title']).textContent);
-    console.log(document.getElementById("body" + note['title']).textContent);
+    //console.log(document.getElementById("title" + note['title']).textContent);
+    //console.log(document.getElementById("body" + note['title']).textContent);
 
     let body = {
       "username": localStorage.getItem('current_user'),

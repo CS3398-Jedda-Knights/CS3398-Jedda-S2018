@@ -12,7 +12,7 @@
         <div class="col-9 mb-5 pb-5">
             <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active menu-box" id="v-pills-notes" role="tabpanel" aria-labelledby="v-pills-notes-tab">
-                    <h1>
+                    <h1 *ngIf="currentNotes.length > 0">
                         <div>{{currentNotes[0].subject}}</div>
                     </h1>
                     <hr>
