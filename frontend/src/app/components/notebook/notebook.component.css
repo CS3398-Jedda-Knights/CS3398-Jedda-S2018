@@ -15,6 +15,9 @@
 
 .nav-link {
     color: rgb(16%, 17%, 19%);
+    background-color: white;
+    border: none;
+    text-align: left;
 }
 
 .nav-pills .nav-link.active,

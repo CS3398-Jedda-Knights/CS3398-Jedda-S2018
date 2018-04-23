@@ -21,14 +21,13 @@ Noteriety is an application primarily aimed at allowing users to create notes, f
 + User Login feature has been implemented
 + About page has been added
 + App routes are protected from unauthorized users
++ Setting up the database relationships for users' and their flashcards
 ```
 ###### In Progress:
 ``` diff
-- Integrating the frontend and backend (i.e establishing services in Angular to access the APIs')
-- Setting up the relationships for the database for users' notebooks
-- Setting up the database relationships for users' and their flashcards
-- Implementing features that will allow the user to view their profile, notebooks, and flashcards
-- Implementing features that will allow the user to edit their profile, notebooks, and flashcards
+- Continuously integrating the frontend services with the backend APIs'
+- Updating features that allow the user to view their profile, notebooks, and flashcards
+- Updating features that allow the user to edit their profile, notebooks, and flashcards
 - Implementing features that will allow users to share their personal information, notebooks, or flashcards with other users
 ```
 
