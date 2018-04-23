@@ -14,6 +14,15 @@ export class FlashcardsComponent implements OnInit {
   flashcards: JSON[];
   decks: string[] = [];
   currentDeck: JSON[] = [];
+  currentFlashcard: JSON;
+  answer: string;
+  question: string;
+  result: string;
+  current: number;
+  finalTime: number = 60;
+  time: number = 0;
+  timeleft: number;
+  correct: number = 0;
 
   constructor(private userService: UserService) { }
 
@@ -30,6 +39,7 @@ export class FlashcardsComponent implements OnInit {
         if(flashcard['subject'] == localStorage.getItem('Current_Deck')){
           this.currentDeck.push(flashcard);
         }
+        this.currentFlashcard = this.currentDeck[0];
         if (!this.decks.includes(flashcard['subject'])){
           this.decks.push(flashcard['subject']);
         }
@@ -47,6 +57,51 @@ export class FlashcardsComponent implements OnInit {
         this.currentDeck.push(flashcard);
       }
     }
+    this.currentFlashcard = this.currentDeck[0];
+  }
+
+  setAnswer(input) {
+    console.log(this.currentFlashcard['answer']);
+    if(this.currentFlashcard['answer'] == input.value){
+      this.result = this.currentFlashcard['answer'] + "\n" + input.value + "  \u2714";
+      document.getElementById("result").style.color = "green";
+      this.correct = this.correct + 1;
+    }else{
+      this.result = this.currentFlashcard['answer'] + "\n" + input.value + "  \u2716";
+      document.getElementById("result").style.color = "red";
+    }
+    setTimeout(()=>{
+      if(this.current < this.currentDeck.length - 1){
+        this.current++;
+      }else{
+        this.current = 0;
+      }
+      this.currentFlashcard = this.currentDeck[this.current];
+      //this.answer = this.flashcardViews[this.current][1];
+      //this.question = this.flashcardViews[this.current][0];
+      this.result = "";
+    },2000);
+  }
+
+  startTimer(userTime) {
+    this.finalTime = userTime;
+    this.correct = 0;
+    document.getElementById("correct").style.visibility = "visible";
+    var x = setInterval(()=>{
+      this.time = this.time + 1;
+      this.timeleft = this.finalTime - this.time;
+      document.getElementById("correct").innerHTML = "Correct: " + this.correct.toString();
+      
+      document.getElementById("time").innerHTML = this.timeleft.toString();
+      document.getElementById("time").style.width = (this.time * 100/this.finalTime).toString() + "%";
+      
+      // If the count down is over, write some text 
+      if (this.timeleft < 0) {
+          clearInterval(x)
+          this.time = 0;
+          document.getElementById("time").innerHTML = "EXPIRED";
+      }
+    }, 1000);
   }
 
   //viewDeck(deck:string[])
